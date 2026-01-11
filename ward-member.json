@@ -1,0 +1,20 @@
+{
+    "new-ward-family":{
+    "fam_name" : "Jimenez",
+    "date_moved": "05/10/2025",
+    "people_in_family" : "2",
+    "bishop_visit":false
+    },
+    "family_member":[ 
+        {
+        "name" : "Dany",
+        "gender" :"male",
+        "birth": "25/03/1997"
+        },
+        {
+        "name": "Keylin",
+        "gender": "female",
+        "birth" : "29/08/1999"
+        }
+    ]
+    }
