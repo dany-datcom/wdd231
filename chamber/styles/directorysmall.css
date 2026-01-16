@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
@@ -51,6 +51,8 @@ header h1 {
     order: 3;
     width: 100%;
     margin-top: 1rem;
+    color: white; 
+    background: linear-gradient(135deg, #004080 0%, #0066cc 100%);
 }
 
 .menu-toggle {
@@ -96,7 +98,7 @@ nav ul li {
 
 nav ul li a {
     display: block;
-    color: white;
+    color: white !important;
     text-decoration: none;
     font-weight: 600;
     padding: 0.8rem;
@@ -109,7 +111,8 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.25); /* Hacer más oscuro */
+    color: white;
     border-bottom: 3px solid #ffcc00;
 }
 
