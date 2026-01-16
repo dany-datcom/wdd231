@@ -25,10 +25,11 @@ body {
    HEADER (MOBILE)
    =========================================== */
 header {
-    background: linear-gradient(135deg, #004080 0%, #0066cc 100%);
-    position: relative; 
-    z-index: 10;
+    background: #004080; 
+    background: linear-gradient(135deg, #00264d 0%, #004080 100%); 
     color: white;
+    position: relative;
+    z-index: 100;
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -54,8 +55,8 @@ header h1 {
     width: 100%;
     margin-top: 1rem;
     color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); 
+    font-weight: 700; }
 
 .menu-toggle {
     display: block;
@@ -70,6 +71,11 @@ header h1 {
     order: 2;
 }
 
+.logo, .menu-toggle {
+    position: relative;
+    z-index: 101;
+}
+
 .menu-toggle:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -78,7 +84,7 @@ header h1 {
    NAVIGATION (MOBILE)
    =========================================== */
 nav {
-    background-color: #0073e6;
+    background-color:  #0066cc;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -102,6 +108,7 @@ nav ul li a {
     display: block;
     color: white !important;
     text-decoration: none;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     font-weight: 600;
     padding: 0.8rem;
     transition: all 0.3s ease;
@@ -113,11 +120,14 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-    background-color: rgba(255, 255, 255, 0.25); /* Hacer más oscuro */
-    color: white;
+    background-color: rgba(255, 255, 255, 0.3); 
+    color: white !important;
     border-bottom: 3px solid #ffcc00;
 }
 
+nav * {
+    color: white !important;
+}
 /* ===========================================
    MAIN CONTENT (MOBILE)
    =========================================== */
