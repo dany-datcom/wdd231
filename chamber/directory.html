@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="WDD 231 - Chamber of Commerce Directory of San Ramon. Discover local businesses and support our community.">
+    <meta name="author" content="Dany Jimenez">
+
+    <meta property="og:title" content="San Ramon Chamber of Commerce Directory">
+    <meta property="og:description"
+        content="Explore local businesses in San Ramon. Support our community through commerce and networking.">
+    <meta property="og:image" content="https://dany-datcom.github.io/wdd231/chamber/images/og-image.png">
+    <meta property="og:url" content="https://dany-datcom.github.io/wdd231/chamber/directory.html">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/directorysmall.css">
+    <link rel="stylesheet" href="styles/directorylargue.css">
+    
+
+    <title>San Ramon Chamber of Commerce | Business Directory</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/chamber_of_commerce.webp" alt="San Ramon Chamber of Commerce Logo">
+            </a>
+        </div>
+        <h1>San Ramon Chamber of Commerce</h1>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="directory.html" class="active">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Local Business Directory</h2>
+        <p class="view-toggle">
+            View as:
+            <button id="grid" class="active">Grid</button> 
+            <button id="list">List</button>
+        </p>
+
+        <article id="member-directory" class="grid">
+
+
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="currentYear"></span> San Ramon Chamber of Commerce</p>
+            <p>Contact: info@sanramonchamber.org | Phone: (506) 555-1234</p>
+            <p>75 meters south of the southwest corner of Alberto Manuel Brenes Park, Alajuela Province, San Ramón</p>
+            <p>Developed by Dany Jimenez | WDD 231 | Last Modified: <span id="lastModified"></span></p>
+
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                    <img src="images/facebook.png" alt="Facebook" width="24" height="24">
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                    <img src="images/twitter.png" alt="Twitter" width="24" height="24">
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <img src="images/instagram.png" alt="Instagram" width="24" height="24">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/directory.js"></script>
+</body>
+
+</html>

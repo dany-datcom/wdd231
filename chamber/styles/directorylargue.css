@@ -1,0 +1,119 @@
+/* ===========================================
+   LARGE SCREEN STYLES (≥768px)
+   =========================================== */
+
+/* HEADER (DESKTOP) */
+@media (min-width: 768px) {
+    header {
+        padding: 1rem 2rem;
+        flex-wrap: nowrap;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+        order: 2;
+        width: auto;
+        margin: 0;
+        flex-grow: 1;
+        text-align: center;
+    }
+    
+    .logo {
+        order: 1;
+    }
+    
+    .logo img {
+        height: 120px;
+    }
+    
+    .menu-toggle {
+        display: none;
+    }
+    
+    /* NAVIGATION (DESKTOP) */
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    nav ul li a {
+        padding: 1rem 1.5rem;
+        border-bottom: 3px solid transparent;
+    }
+    
+    nav ul li a.active {
+        border-bottom-color: #ffcc00;
+    }
+    
+    /* MAIN CONTENT (DESKTOP) */
+    main {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+    }
+    
+    main h2 {
+        font-size: 2rem;
+    }
+    
+    .view-toggle button {
+        padding: 0.5rem 1.2rem;
+        margin: 0 0.3rem;
+    }
+    
+    /* MEMBER DIRECTORY (DESKTOP) */
+    #member-directory.grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    /* LIST VIEW (DESKTOP) */
+    #member-directory.list .member-card {
+        flex-direction: row;
+        padding: 0;
+    }
+    
+    #member-directory.list .member-card img {
+        width: 120px;
+        height: 120px;
+        border-bottom: none;
+        border-right: 3px solid #0073e6;
+        flex-shrink: 0;
+    }
+    
+    #member-directory.list .card-content {
+        flex-grow: 1;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    #member-directory.list .member-card h3 {
+        margin-top: 0;
+    }
+    
+    /* FOOTER (DESKTOP) */
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* ===========================================
+   EXTRA LARGE SCREENS (≥1024px)
+   =========================================== */
+@media (min-width: 1024px) {
+    #member-directory.grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+    
+    #member-directory.list .member-card img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .member-card:hover {
+        transform: translateY(-8px);
+    }
+}

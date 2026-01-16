@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Super Mario",
+    "address": "Street 2, San Ramón, Alajuela",
+    "phone": "(506) 2445-4018",
+    "url": "https://www.facebook.com/SuperMarioSanRamon",
+    "image": "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?w=400&h=300&fit=crop",
+    "membership": 3,
+    "other": "Family grocery store serving San Ramón since 1985."
+  },
+  {
+    "name": "Supermercados Molina",
+    "address": "Av Central, San Ramón Centro",
+    "phone": "(506) 2445-5513", 
+    "url": "https://www.supermolina.com",
+    "image": "https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=400&h=300&fit=crop",
+    "membership": 2,
+    "other": "Full-service supermarket with fresh local produce."
+  },
+  {
+    "name": "La Gran Bodega",
+    "address": "El INVU, San Ramón",
+    "phone": "(506) 2445-6677",
+    "url": "https://facebook.com/lagranbodegasanramon",
+    "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&h=300&fit=crop",
+    "membership": 1,
+    "other": "Fresh fruits and vegetables from local farmers."
+  },
+  {
+    "name": "Tech Solutions Costa Rica",
+    "address": "San Ramón Tech Park",
+    "phone": "(506) 2555-0101",
+    "url": "https://techsolutionscr.com",
+    "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=300&fit=crop",
+    "membership": 3,
+    "other": "IT services and software development for local businesses."
+  },
+  {
+    "name": "Café de Altura",
+    "address": "Coffee District, San Ramón",
+    "phone": "(506) 2555-0202",
+    "url": "https://cafedealtura.com",
+    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&fit=crop",
+    "membership": 2,
+    "other": "Artisanal coffee roasted with traditional methods."
+  },
+  {
+    "name": "Taller Mecánico San Ramón",
+    "address": "Zona Industrial, San Ramón",
+    "phone": "(506) 2555-0303",
+    "url": "https://tallermecanicosanramon.com",
+    "image": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=400&h=300&fit=crop",
+    "membership": 2,
+    "other": "Auto repair and maintenance with 20 years experience."
+  },
+  {
+    "name": "Hotel Vista al Valle",
+    "address": "Carretera a Piedades, San Ramón",
+    "phone": "(506) 2555-0404",
+    "url": "https://hotelvistaalvalle.com",
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop",
+    "membership": 3,
+    "other": "Eco-friendly hotel with panoramic mountain views."
+  },
+  {
+    "name": "Artesanías Típicas",
+    "address": "Centro Cultural, San Ramón",
+    "phone": "(506) 2555-0505",
+    "url": "https://artesaniastipicascr.com",
+    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "membership": 1,
+    "other": "Traditional Costa Rican handicrafts and souvenirs."
+  },
+  {
+    "name": "Clínica Dental Sonrisa Perfecta",
+    "address": "Plaza Médica, San Ramón",
+    "phone": "(506) 2555-0606",
+    "url": "https://sonrisaperfectacr.com",
+    "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop",
+    "membership": 2,
+    "other": "Complete dental care for adults and children."
+  },
+  {
+    "name": "Marketing Digital CR",
+    "address": "Centro de Negocios, San Ramón",
+    "phone": "(506) 2555-0707",
+    "url": "https://marketingdigitalcr.com",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+    "membership": 3,
+    "other": "Digital marketing and social media management."
+  },
+  {
+    "name": "Farmacia San Ramón",
+    "address": "Av 1, San Ramón Centro",
+    "phone": "(506) 2555-0808",
+    "url": "https://farmaciasanramon.com",
+    "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
+    "membership": 1,
+    "other": "Pharmacy and health products with delivery service."
+  },
+  {
+    "name": "Restaurante Sabor Tico",
+    "address": "Paseo de los Turistas, San Ramón",
+    "phone": "(506) 2555-0909",
+    "url": "https://saborticocr.com",
+    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop",
+    "membership": 2,
+    "other": "Traditional Costa Rican cuisine in a family setting."
+  }
+]
