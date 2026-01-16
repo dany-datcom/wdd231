@@ -2,8 +2,8 @@
    LARGE SCREEN STYLES (≥768px)
    =========================================== */
 
-/* HEADER (DESKTOP) */
 @media (min-width: 768px) {
+    /* HEADER (DESKTOP) */
     header {
         padding: 1rem 2rem;
         flex-wrap: nowrap;
@@ -23,7 +23,7 @@
     }
     
     .logo img {
-        height: 120px;
+        height: 100px;
     }
     
     .menu-toggle {
@@ -32,7 +32,7 @@
     
     /* NAVIGATION (DESKTOP) */
     nav ul {
-        display: flex;
+        display: flex !important;
         flex-direction: row;
         justify-content: center;
     }
@@ -43,7 +43,7 @@
     }
     
     nav ul li a.active {
-        border-bottom-color: #ffcc00;
+        border-bottom-color: var(--color-accent);
     }
     
     /* MAIN CONTENT (DESKTOP) */
@@ -77,7 +77,7 @@
         width: 120px;
         height: 120px;
         border-bottom: none;
-        border-right: 3px solid #0073e6;
+        border-right: 3px solid var(--color-primary);
         flex-shrink: 0;
     }
     
@@ -105,15 +105,16 @@
    =========================================== */
 @media (min-width: 1024px) {
     #member-directory.grid {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
     
     #member-directory.list .member-card img {
-        width: 150px;
-        height: 150px;
+        width: 140px;
+        height: 140px;
     }
     
     .member-card:hover {
-        transform: translateY(-8px);
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
     }
 }
