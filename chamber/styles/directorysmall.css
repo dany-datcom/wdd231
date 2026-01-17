@@ -1,19 +1,16 @@
-/* ===========================================
-   CSS VARIABLES - PALETA SIMPLE WCAG AA
-   =========================================== */
 :root {
-    /* COLORES PRINCIPALES - WCAG AA GARANTIZADO */
-    --color-primary: #b30000;        /* Rojo oscuro: 7:1 con blanco ✅ */
-    --color-dark: #212121;           /* Casi negro: 15:1 con blanco ✅ */
-    --color-light: #f5f5f5;          /* Gris claro: 15:1 con negro ✅ */
-    --color-white: #ffffff;          /* Blanco puro */
-    --color-black: #000000;          /* Negro puro */
+    
+    --color-primary: #003366;        
+    --color-dark: #212121;           
+    --color-light: #f5f5f5;          
+    --color-white: #ffffff;          
+    --color-black: #000000;         
     
     /* COLORES SECUNDARIOS */
-    --color-accent: #ff6b00;         /* Naranja: solo elementos grandes */
-    --color-gold: #b8860b;           /* Oro oscuro: 7:1 con blanco ✅ */
-    --color-silver: #808080;         /* Gris: 5.7:1 con blanco ✅ */
-    --color-bronze: #8b4513;         /* Marrón: 9:1 con blanco ✅ */
+    --color-accent: #ff6b00;         
+    --color-gold: #b8860b;           
+    --color-silver: #808080;         
+    --color-bronze: #8b4513;         
 }
 
 /* ===========================================
@@ -80,11 +77,11 @@ header h1 {
 }
 
 /* ===========================================
-   NAVIGATION (MOBILE)
+   NAVIGATION (MOBILE) 
    =========================================== */
 nav {
     background-color: var(--color-primary);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px #e6f0ff;
 }
 
 nav ul {
@@ -117,7 +114,6 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-    background-color: rgba(255, 255, 255, 0.2);
     border-bottom: 3px solid var(--color-accent);
 }
 
@@ -132,7 +128,7 @@ main {
 }
 
 main h2 {
-    color: var(--color-dark);
+    color: var(--color-black);
     font-size: 1.8rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
@@ -170,7 +166,7 @@ main h2 {
 .loading {
     text-align: center;
     font-style: italic;
-    color: #666;
+    color: (--color-silver);
     padding: 3rem;
     font-size: 1.2rem;
 }
@@ -244,20 +240,6 @@ main h2 {
     letter-spacing: 0.5px;
 }
 
-.membership-gold {
-    background-color: var(--color-gold);
-    color: var(--color-white);
-}
-
-.membership-silver {
-    background-color: var(--color-silver);
-    color: var(--color-white);
-}
-
-.membership-bronze {
-    background-color: var(--color-bronze);
-    color: var(--color-white);
-}
 
 /* LIST VIEW FOR MOBILE */
 #member-directory.list .member-card {

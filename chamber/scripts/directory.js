@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
     style.textContent = `
         .member-count {
             font-size: 1rem;
-            color: #666;
+            color: #black;
             font-weight: normal;
             margin-left: 10px;
         }
