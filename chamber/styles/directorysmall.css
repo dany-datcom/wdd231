@@ -166,7 +166,7 @@ main h2 {
 .loading {
     text-align: center;
     font-style: italic;
-    color: (--color-silver);
+    color: gray;
     padding: 3rem;
     font-size: 1.2rem;
 }
