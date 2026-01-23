@@ -30,20 +30,37 @@
         display: none;
     }
     
-    /* NAVIGATION (DESKTOP) */
+    /* NAVIGATION (DESKTOP) - CORREGIDO */
+    nav {
+        background-color: (--color-primary);
+        box-shadow: none;
+    }
+    
     nav ul {
-        display: flex !important;
+        display: flex;
         flex-direction: row;
         justify-content: center;
+        background-color: transparent;
+    }
+    
+    nav ul li {
+        margin: 0 0.5rem;
     }
     
     nav ul li a {
         padding: 1rem 1.5rem;
         border-bottom: 3px solid transparent;
+        border-radius: 4px;
+    }
+    
+    nav ul li a:hover {
+        background-color: rgba(0, 51, 102, 0.1);
     }
     
     nav ul li a.active {
         border-bottom-color: var(--color-accent);
+        background-color: rgba(255, 107, 0, 0.1);
+        font-weight: bold;
     }
     
     /* MAIN CONTENT (DESKTOP) */

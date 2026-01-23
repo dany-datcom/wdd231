@@ -7,6 +7,7 @@ const display = document.querySelector("article");
 const memberDirectory = document.getElementById("member-directory");
 const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector("nav ul");
+
 function setupMobileMenu() {
     console.log('📱 Setting up mobile menu...');
     
@@ -14,17 +15,32 @@ function setupMobileMenu() {
         console.log('✅ Mobile menu elements found');
         
         menuToggle.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-            menuToggle.textContent = navMenu.classList.contains("active") ? "✕" : "☰";
+            navMenu.classList.toggle("show"); // ✅ CAMBIÉ "active" por "show"
+            menuToggle.textContent = navMenu.classList.contains("show") ? "✕" : "☰"; // ✅ CAMBIÉ "active" por "show"
             console.log('🍔 Mobile menu toggled');
         });
         
         document.querySelectorAll("nav a").forEach(link => {
             link.addEventListener("click", () => {
-                navMenu.classList.remove("active");
-                menuToggle.textContent = "☰";
+                if (window.innerWidth < 768) { // ✅ AGREGUÉ esta condición
+                    navMenu.classList.remove("show"); // ✅ CAMBIÉ "active" por "show"
+                    menuToggle.textContent = "☰";
+                }
             });
         });
+        
+        // ✅ AGREGUÉ: Cerrar menú al hacer clic fuera
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth < 768 && 
+                navMenu.classList.contains('show') &&
+                !navMenu.contains(e.target) && 
+                e.target !== menuToggle) {
+                
+                navMenu.classList.remove('show');
+                menuToggle.textContent = '☰';
+            }
+        });
+        
     } else {
         console.warn('⚠️ Mobile menu elements not found');
     }
@@ -225,16 +241,12 @@ function setupFooter() {
     }
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
     console.log('🎉 DOM fully loaded - Initializing chamber directory...');
     
     setupMobileMenu();
-    
     setupViewToggle();
-    
     setupFooter();
-    
     loadMembers();
     
     console.log('✅ Chamber directory initialization complete!');
@@ -243,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
     style.textContent = `
         .member-count {
             font-size: 1rem;
-            color: #black;
+            color: var(--color-dark);
             font-weight: normal;
             margin-left: 10px;
         }
@@ -259,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         
         .error-message button {
-            background-color: #004080;
+            background-color: var(--color-primary);
             color: white;
             border: none;
             padding: 0.5rem 1.5rem;
@@ -272,26 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .error-message button:hover {
             background-color: #00264d;
         }
-        
-        /* Clase active para botones de vista */
-        button.active {
-            background-color: #004080 !important;
-            font-weight: bold;
-        }
     `;
     document.head.appendChild(style);
     console.log('🎨 Dynamic styles added');
 });
-
-window.reloadPage = function() {
-    location.reload();
-};
-
-window.testElements = function() {
-    console.log('🔍 Testing page elements:');
-    console.log('  gridButton (#grid):', document.querySelector('#grid'));
-    console.log('  listButton (#list):', document.querySelector('#list'));
-    console.log('  display (<article>):', document.querySelector('article'));
-    console.log('  memberDirectory (#member-directory):', document.getElementById('member-directory'));
-    console.log('  JSON file:', fetch('data/members.json').then(r => `Status: ${r.status}`).catch(e => `Error: ${e.message}`));
-};

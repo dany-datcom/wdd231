@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="San Ramon Chamber of Commerce - Promoting local business growth and community development in San Ramon, Costa Rica.">
+    <meta name="author" content="Dany Jimenez">
+
+    <meta property="og:title" content="San Ramon Chamber of Commerce - Home">
+    <meta property="og:description"
+        content="Join our community of local businesses. Networking, events, and growth opportunities in San Ramon.">
+    <meta property="og:image" content="https://dany-datcom.github.io/wdd231/chamber/images/og-image.png">
+    <meta property="og:url" content="https://dany-datcom.github.io/wdd231/chamber/index.html">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/directorysmall.css">
+    <link rel="stylesheet" href="styles/directorylargue.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <title>San Ramon Chamber of Commerce | Home</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/chamber_of_commerce.webp" alt="San Ramon Chamber of Commerce Logo" width="100" height="100">
+            </a>
+        </div>
+        <h1>San Ramon Chamber of Commerce</h1>
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </header>
+
+    <nav id="mainNav">
+        <ul id="navMenu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <picture>
+                <source media="(max-width: 600px)" srcset="images/srsmall.webp">
+                <source media="(max-width: 1200px)" srcset="images/srmedium.webp">
+                <img src="images/sanramonaereo.webp" alt="San Ramon city view with mountains" class="hero-image" width="1200" height="400">
+            </picture>
+            <div class="hero-content">
+                <h2>Welcome to San Ramon</h2>
+                <p>Building a stronger community through business collaboration</p>
+                <a href="join.html" class="cta-button">Join the Chamber</a>
+            </div>
+        </section>
+
+        <h2>Community Highlights</h2>
+
+        <section class="events">
+            <h3>Upcoming Events</h3>
+            <div class="events-container">
+                <div class="event-card">
+                    <h4>Business Networking Breakfast</h4>
+                    <p class="event-date">March 15, 2024 | 8:00 AM</p>
+                    <p>Connect with local entrepreneurs at our monthly meetup. Free for members.</p>
+                    <a href="#" class="event-link">Learn More →</a>
+                </div>
+                <div class="event-card">
+                    <h4>Annual San Ramon Business Fair</h4>
+                    <p class="event-date">April 20-22, 2024</p>
+                    <p>Showcase your business to thousands of visitors. Booth registration open.</p>
+                    <a href="#" class="event-link">Register Now →</a>
+                </div>
+                <div class="event-card">
+                    <h4>Digital Marketing Workshop</h4>
+                    <p class="event-date">May 10, 2024 | 2:00 PM</p>
+                    <p>Learn social media strategies for small businesses. Limited seating.</p>
+                    <a href="#" class="event-link">Sign Up →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="weather">
+            <h3>San Ramon Weather</h3>
+            <div class="weather-card">
+                <div class="current-weather">
+                    <figure>
+                        <img id="weather-icon" src="" alt="Weather Icon" width="80" height="80">
+                        <figcaption id="weather-desc">Loading...</figcaption>
+                    </figure>
+                    <div class="weather-temp">
+                        <span id="current-temp">--</span>
+                        <div class="weather-details">
+                            <p id="humidity">Humidity: --%</p>
+                            <p id="wind">Wind: -- km/h</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-forecast">
+                    <h4>3-Day Forecast</h4>
+                    <div class="forecast-days">
+                        <!-- Forecast dinámico será insertado por JavaScript -->
+                        <div class="day" id="forecast-day-0">
+                            <p><strong>Today</strong></p>
+                            <p class="forecast-temp">--°C</p>
+                            <p class="forecast-desc">--</p>
+                        </div>
+                        <div class="day" id="forecast-day-1">
+                            <p><strong>Tomorrow</strong></p>
+                            <p class="forecast-temp">--°C</p>
+                            <p class="forecast-desc">--</p>
+                        </div>
+                        <div class="day" id="forecast-day-2">
+                            <p><strong>Day 3</strong></p>
+                            <p class="forecast-temp">--°C</p>
+                            <p class="forecast-desc">--</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BUSINESS SPOTLIGHTS - AHORA DINÁMICO -->
+        <section class="spotlights">
+            <h3>Featured Businesses</h3>
+            <div class="spotlights-container" id="spotlights-container">
+                <!-- Los spotlights serán insertados dinámicamente por JavaScript -->
+                <div class="loading-spotlights">Loading featured businesses...</div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h3>Ready to Grow Your Business?</h3>
+                <p>Join over 150 local businesses benefiting from Chamber membership</p>
+                <ul class="benefits-list">
+                    <li>✓ Monthly networking events</li>
+                    <li>✓ Business promotion in our directory</li>
+                    <li>✓ Advocacy with local government</li>
+                    <li>✓ Member discounts and workshops</li>
+                </ul>
+                <a href="join.html" class="cta-button large">Become a Member Today</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="currentYear"></span> San Ramon Chamber of Commerce</p>
+            <p>Contact: info@sanramonchamber.org | Phone: (506) 555-1234</p>
+            <p>75 meters south of the southwest corner of Alberto Manuel Brenes Park, Alajuela Province, San Ramón</p>
+            <p>Developed by Dany Jimenez | WDD 231 | Last Modified: <span id="lastModified"></span></p>
+
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                    <img src="images/facebook.png" alt="Follow us on Facebook" width="24" height="24">
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                    <img src="images/twitter.png" alt="Follow us on Twitter" width="24" height="24">
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <img src="images/instagram.png" alt="Follow us on Instagram" width="24" height="24">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/home.js" defer></script>
+</body>
+
+</html>
