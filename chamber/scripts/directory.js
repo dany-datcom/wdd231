@@ -15,21 +15,21 @@ function setupMobileMenu() {
         console.log('✅ Mobile menu elements found');
         
         menuToggle.addEventListener("click", () => {
-            navMenu.classList.toggle("show"); // ✅ CAMBIÉ "active" por "show"
-            menuToggle.textContent = navMenu.classList.contains("show") ? "✕" : "☰"; // ✅ CAMBIÉ "active" por "show"
+            navMenu.classList.toggle("show"); 
+            menuToggle.textContent = navMenu.classList.contains("show") ? "✕" : "☰"; 
             console.log('🍔 Mobile menu toggled');
         });
         
         document.querySelectorAll("nav a").forEach(link => {
             link.addEventListener("click", () => {
-                if (window.innerWidth < 768) { // ✅ AGREGUÉ esta condición
-                    navMenu.classList.remove("show"); // ✅ CAMBIÉ "active" por "show"
+                if (window.innerWidth < 768) { 
+                    navMenu.classList.remove("show"); 
                     menuToggle.textContent = "☰";
                 }
             });
         });
         
-        // ✅ AGREGUÉ: Cerrar menú al hacer clic fuera
+        
         document.addEventListener('click', function(e) {
             if (window.innerWidth < 768 && 
                 navMenu.classList.contains('show') &&

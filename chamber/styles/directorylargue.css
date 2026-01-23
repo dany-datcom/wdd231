@@ -1,14 +1,10 @@
-/* ===========================================
-   LARGE SCREEN STYLES (≥768px)
-   =========================================== */
-
 @media (min-width: 768px) {
-    /* HEADER (DESKTOP) */
+
     header {
         padding: 1rem 2rem;
         flex-wrap: nowrap;
     }
-    
+
     header h1 {
         font-size: 1.8rem;
         order: 2;
@@ -17,79 +13,79 @@
         flex-grow: 1;
         text-align: center;
     }
-    
+
     .logo {
         order: 1;
     }
-    
+
     .logo img {
         height: 100px;
     }
-    
+
     .menu-toggle {
         display: none;
     }
-    
-    /* NAVIGATION (DESKTOP) - CORREGIDO */
+
+
     nav {
         background-color: (--color-primary);
         box-shadow: none;
     }
-    
+
     nav ul {
         display: flex;
         flex-direction: row;
         justify-content: center;
         background-color: transparent;
     }
-    
+
     nav ul li {
         margin: 0 0.5rem;
     }
-    
+
     nav ul li a {
         padding: 1rem 1.5rem;
         border-bottom: 3px solid transparent;
         border-radius: 4px;
     }
-    
+
     nav ul li a:hover {
         background-color: rgba(0, 51, 102, 0.1);
     }
-    
+
     nav ul li a.active {
         border-bottom-color: var(--color-accent);
         background-color: rgba(255, 107, 0, 0.1);
         font-weight: bold;
     }
-    
-    /* MAIN CONTENT (DESKTOP) */
+
+
     main {
         max-width: 1200px;
         margin: 2rem auto;
         padding: 0 1.5rem;
     }
-    
+
     main h2 {
         font-size: 2rem;
     }
-    
+
     .view-toggle button {
         padding: 0.5rem 1.2rem;
         margin: 0 0.3rem;
     }
-    
-    /* MEMBER DIRECTORY (DESKTOP) */
+
+
     #member-directory.grid {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
-    
-    /* LIST VIEW (DESKTOP) */
+
+
     #member-directory.list .member-card {
         flex-direction: row;
         padding: 0;
     }
-    
+
     #member-directory.list .member-card img {
         width: 120px;
         height: 120px;
@@ -97,7 +93,7 @@
         border-right: 3px solid var(--color-primary);
         flex-shrink: 0;
     }
-    
+
     #member-directory.list .card-content {
         flex-grow: 1;
         padding: 1rem;
@@ -105,31 +101,29 @@
         flex-direction: column;
         justify-content: center;
     }
-    
+
     #member-directory.list .member-card h3 {
         margin-top: 0;
     }
-    
-    /* FOOTER (DESKTOP) */
+
+
     .footer-content {
         max-width: 1200px;
         margin: 0 auto;
     }
 }
 
-/* ===========================================
-   EXTRA LARGE SCREENS (≥1024px)
-   =========================================== */
+
 @media (min-width: 1024px) {
     #member-directory.grid {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
-    
+
     #member-directory.list .member-card img {
         width: 140px;
         height: 140px;
     }
-    
+
     .member-card:hover {
         transform: translateY(-5px);
         transition: transform 0.3s ease;
