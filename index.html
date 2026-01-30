@@ -3,169 +3,279 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WDD 231 - Dynamic Web Fundamentals">
+  <meta name="description" content="Dany Jimenez's portfolio for WDD 231 - Dynamic Web Fundamentals course">
   <meta name="author" content="Dany Jimenez">
-  <title>Dany Jimenez | WDD 231 Home</title>
-  <meta property="og:title" content="My project term 1 2026">
-  <meta property="og:description" content="Explore my page and overview my of progress in web programming skills">
+  <title>Dany Jimenez | WDD 231 - Dynamic Web Fundamentals</title>
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Dany Jimenez - WDD 231 Portfolio">
+  <meta property="og:description" content="Explore my web development journey and projects in the WDD 231 course">
   <meta property="og:image" content="https://dany-datcom.github.io/wdd231/images/me.webp">
-  <meta property="og:url" content="https://dany-datcom.github.io/wdd231/index.html" >
-
-
-  <!-- Google Font -->
+  <meta property="og:url" content="https://dany-datcom.github.io/wdd231/index.html">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer">
   
   <!-- CSS -->
   <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css" media="screen">
   
-  <!-- JS -->
+  <!-- JavaScript -->
   <script src="scripts/main.js" defer></script>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script src="scripts/courses.js" defer></script>
+  <script src="scripts/visitorCounter.js" defer></script>
 </head>
 
 <body>
-  <!-- Skip link for accessibility -->
+  <!-- Skip to Main Content for Accessibility -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header class="header">
-    <div class="header-container">
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header-container container">
       <div class="header-top">
         <div class="logo-container">
-          <img src="images/dany.webp" alt="Site Logo" width="50" height="50">
-          <span class="site-name">Dany Jimenez</span>
-          <span class="course-code">WDD 131</span>
+          <img src="images/dany.webp" alt="Dany Jimenez logo" width="60" height="60" loading="lazy">
+          <div class="logo-text">
+            <h1 class="site-name">Dany Jimenez</h1>
+            <span class="course-code">WDD 231</span>
+          </div>
         </div>
         
-        <button id="menu" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="menu-icon"></span>
-          <span class="menu-icon"></span>
-          <span class="menu-icon"></span>
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="sr-only">Menu</span>
+          <span class="menu-icon-bar"></span>
+          <span class="menu-icon-bar"></span>
+          <span class="menu-icon-bar"></span>
         </button>
       </div>
 
-      <nav id="nav" class="nav-menu" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-          <li><a href="#" class="nav-link">Chamber Project</a></li>
-          <li><a href="#" class="nav-link">Final Project</a></li>
+      <!-- Navigation -->
+      <nav id="nav-menu" class="nav-menu" aria-label="Primary navigation">
+        <ul class="nav-list" role="menubar">
+          <li role="none"><a href="index.html" class="nav-link active" aria-current="page" role="menuitem">Home</a></li>
+          <li role="none"><a href="chamber/index.html" class="nav-link" role="menuitem">Chamber Project</a></li>
+          <li role="none"><a href="final-project/index.html" class="nav-link" role="menuitem">Final Project</a></li>
+          <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main id="main-content" class="main">
+  <!-- Main Content -->
+  <main id="main-content" class="main" role="main">
     <div class="container">
-      <!-- Loading indicator (visible only when loading) -->
-      <div id="loading-indicator" class="loading-indicator">
-        <div class="spinner"></div>
-        <p>Loading content...</p>
+      <!-- Loading Indicator -->
+      <div id="loading-indicator" class="loading-indicator" aria-live="polite" aria-busy="true">
+        <div class="spinner" aria-hidden="true"></div>
+        <p>Loading content, please wait...</p>
       </div>
 
-      <!-- Content area (hidden while loading) -->
-      <div id="content-area" style="display: none;">
-        <section class="hero">
-          <h1 class="hero-title">Welcome to My Web Development Journey</h1>
-          <p class="hero-subtitle">Exploring dynamic web fundamentals</p>
+      <!-- Content Area -->
+      <div id="content-area" class="content-area" hidden>
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-content">
+            <h1 id="hero-title" class="hero-title">Welcome to My Web Development Journey</h1>
+            <p class="hero-subtitle">Exploring Dynamic Web Fundamentals & Building Modern Web Experiences</p>
+            <a href="#profile" class="btn btn-primary">Learn More About Me</a>
+          </div>
         </section>
 
-        <!-- ABOUT + PHOTO -->
-        <section class="profile-grid">
+        <!-- Profile Section -->
+        <section id="profile" class="profile-grid" aria-labelledby="profile-heading">
+          <h2 id="profile-heading" class="sr-only">Profile Information</h2>
+          
+          <!-- About Card -->
           <article class="card about-card">
-            <div class="card-header">
-              <h2 class="card-title"><i class="fas fa-user"></i> About Me</h2>
-            </div>
+            <header class="card-header">
+              <h2 class="card-title">
+                <i class="fas fa-user-circle" aria-hidden="true"></i> 
+                About Me
+              </h2>
+            </header>
             <div class="card-body">
               <p>
-                I am an administrative assistant and IT support specialist with experience in technical troubleshooting, user support, 
-                and daily operational tasks. I also work as a QA engineer, where I help ensure software quality through testing, identifying issues, 
-                and verifying functionality. I am currently studying web and software development, building skills in HTML, CSS, JavaScript, and programming fundamentals. 
-                I am detail-oriented, responsible, and motivated to continue learning and growing in the technology field, with the goal of contributing to efficient systems, 
-                strong customer support, and reliable, well-designed digital solutions.
+                I am an administrative assistant and IT support specialist with extensive experience in technical troubleshooting, 
+                user support, and daily operational tasks. Currently, I also work as a QA engineer, ensuring software quality through 
+                rigorous testing, issue identification, and functionality verification.
               </p>
               <p>
-                When I'm not coding, I enjoy exploring new technologies and 
-                learning about UI/UX design principles.
+                I'm currently advancing my skills in web and software development, focusing on HTML, CSS, JavaScript, and programming 
+                fundamentals. My goal is to contribute to efficient systems, provide strong customer support, and develop reliable, 
+                well-designed digital solutions.
+              </p>
+              <p>
+                Outside of work, I enjoy exploring emerging technologies, studying UI/UX design principles, and contributing to 
+                open-source projects.
               </p>
             </div>
           </article>
 
+          <!-- Photo Card -->
           <article class="card photo-card">
-            <div class="card-header">
-              <h2 class="card-title"><i class="fas fa-camera"></i> Student Profile</h2>
-            </div>
+            <header class="card-header">
+              <h2 class="card-title">
+                <i class="fas fa-id-card" aria-hidden="true"></i> 
+                Student Profile
+              </h2>
+            </header>
             <div class="card-body">
-              <div class="photo-container">
-                <img src="images/me.webp" alt="Dany Jimenez" class="profile-photo">
-                <div class="photo-info">
+              <div class="profile-container">
+                <img src="images/me.webp" alt="Professional headshot of Dany Jimenez" class="profile-photo" width="200" height="200" loading="lazy">
+                <div class="profile-info">
                   <h3>Dany Jimenez</h3>
-                  <p>Web Development Student</p>
-                  <p>Costa Rica</p>
+                  <ul class="profile-details" aria-label="Personal details">
+                    <li><i class="fas fa-graduation-cap" aria-hidden="true"></i> Web Development Student</li>
+                    <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Costa Rica</li>
+                    <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:contact@example.com">Contact Me</a></li>
+                  </ul>
                 </div>
               </div>
             </div>
           </article>
         </section>
 
-        <!-- COURSES -->
-        <section class="courses-section card">
-          <div class="card-header">
-            <h2 class="card-title"><i class="fas fa-graduation-cap"></i> Web Certificate Courses</h2>
-          </div>
+        <!-- Courses Section -->
+        <section class="courses-section card" aria-labelledby="courses-heading">
+          <header class="card-header">
+            <h2 id="courses-heading" class="card-title">
+              <i class="fas fa-book-open" aria-hidden="true"></i> 
+              Web Development Certificate Courses
+            </h2>
+          </header>
           
           <div class="card-body">
+            <!-- Course Filters -->
             <div class="course-controls">
-              <div class="filter-buttons">
-                <button id="filter-all" class="filter-btn active">All Courses</button>
-                <button id="filter-cse" class="filter-btn">CSE Courses</button>
-                <button id="filter-wdd" class="filter-btn">WDD Courses</button>
-              </div>
+              <fieldset class="filter-group">
+                <legend class="filter-legend">Filter Courses:</legend>
+                <div class="filter-buttons">
+                  <button id="filter-all" class="filter-btn active" aria-pressed="true" data-filter="all">
+                    <span class="filter-btn-text">All Courses</span>
+                    <span class="sr-only">, currently selected</span>
+                  </button>
+                  <button id="filter-cse" class="filter-btn" aria-pressed="false" data-filter="cse">
+                    CSE Courses
+                  </button>
+                  <button id="filter-wdd" class="filter-btn" aria-pressed="false" data-filter="wdd">
+                    WDD Courses
+                  </button>
+                </div>
+              </fieldset>
             </div>
 
-            <!-- COURSE COLUMNS -->
+            <!-- Course Columns -->
             <div class="course-columns">
-              <div class="course-column" id="column-all">
-                <h3>All Courses</h3>
-                <div id="courses-all" class="courses-list"></div>
+              <div class="course-column" id="column-all" aria-labelledby="all-courses-title">
+                <h3 id="all-courses-title">All Courses</h3>
+                <div id="courses-all" class="courses-list" role="list" aria-label="List of all courses"></div>
               </div>
               
-              <div class="course-column hidden" id="column-cse">
-                <h3>CSE Courses</h3>
-                <div id="courses-cse" class="courses-list"></div>
+              <div class="course-column hidden" id="column-cse" aria-labelledby="cse-courses-title" hidden>
+                <h3 id="cse-courses-title">Computer Science & Engineering Courses</h3>
+                <div id="courses-cse" class="courses-list" role="list" aria-label="List of CSE courses"></div>
               </div>
               
-              <div class="course-column hidden" id="column-wdd">
-                <h3>WDD Courses</h3>
-                <div id="courses-wdd" class="courses-list"></div>
+              <div class="course-column hidden" id="column-wdd" aria-labelledby="wdd-courses-title" hidden>
+                <h3 id="wdd-courses-title">Web & Digital Design Courses</h3>
+                <div id="courses-wdd" class="courses-list" role="list" aria-label="List of WDD courses"></div>
               </div>
             </div>
 
-            <div class="credits-summary">
-              <p id="total-credits">Total Credits: 0</p>
+            <!-- Credits Summary -->
+            <div class="credits-summary" aria-live="polite" aria-atomic="true">
+              <p id="total-credits">
+                <i class="fas fa-credit-card" aria-hidden="true"></i>
+                Total Credits: <span class="credits-number">0</span>
+              </p>
             </div>
           </div>
         </section>
+
+        <!-- Course Details Modal -->
+        <dialog id="course-details-dialog" class="modal" aria-labelledby="course-dialog-title">
+          <div class="modal-content">
+            <header class="modal-header">
+              <h2 id="course-dialog-title" class="modal-title">Course Details</h2>
+              <button id="close-dialog" class="close-btn" aria-label="Close dialog">
+                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+            </header>
+            <div class="modal-body" id="course-details-content">
+              <!-- Dynamic content will be inserted here -->
+            </div>
+          </div>
+        </dialog>
       </div>
     </div>
   </main>
 
-  <footer class="footer">
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="social">
-        <a href="https://www.linkedin.com/in/dany-josue-jimenez-gonzalez-051672b4" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/dany-datcom/wdd231" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <!-- Social Links -->
+      <div class="social-links" aria-label="Social media profiles">
+        <a href="https://www.linkedin.com/in/dany-josue-jimenez-gonzalez-051672b4" 
+           class="social-link" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           aria-label="Visit my LinkedIn profile (opens in new tab)">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a href="https://github.com/dany-datcom/wdd231" 
+           class="social-link" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           aria-label="Visit my GitHub repository (opens in new tab)">
+          <i class="fab fa-github" aria-hidden="true"></i>
+          <span class="sr-only">GitHub</span>
+        </a>
+        <a href="https://twitter.com/example" 
+           class="social-link" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           aria-label="Visit my Twitter profile (opens in new tab)">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+          <span class="sr-only">Twitter</span>
+        </a>
       </div>
 
-      <p>
-        &copy; <span id="currentyear"></span> Dany Jimenez | Costa Rica
-      </p>
+      <!-- Copyright & Information -->
+      <div class="footer-info">
+        <p class="copyright">
+          &copy; <span id="current-year"></span> Dany Jimenez. All rights reserved.
+        </p>
+        <p class="location">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          Based in Costa Rica
+        </p>
+        <p id="last-modified" class="last-modified" aria-live="polite">
+          Last updated: <time id="modified-date"></time>
+        </p>
+      </div>
 
-      <p id="lastModified"></p>
-      <p class="visitor-count">Visitors: <span id="visitorCount">0</span></p>
+      <!-- Visitor Counter -->
+      <div class="visitor-counter" aria-live="polite">
+        <p>
+          <i class="fas fa-users" aria-hidden="true"></i>
+          Visitors: <span id="visitor-count" class="visitor-number">0</span>
+        </p>
+      </div>
     </div>
   </footer>
 </body>

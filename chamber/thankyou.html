@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Thank you for joining the San Ramon Chamber of Commerce - Welcome to our community.">
+    <meta name="author" content="Dany Jimenez">
+
+    <meta property="og:title" content="San Ramon Chamber of Commerce - Thank You">
+    <meta property="og:description"
+        content="Thank you for your membership application to the San Ramon Chamber of Commerce.">
+    <meta property="og:image" content="https://dany-datcom.github.io/wdd231/chamber/images/og-image.png">
+    <meta property="og:url" content="https://dany-datcom.github.io/wdd231/chamber/thankyou.html">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/directorysmall.css">
+    <link rel="stylesheet" href="styles/directorylargue.css">
+    <link rel="stylesheet" href="styles/join.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <title>San Ramon Chamber of Commerce | Thank You</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/chamber_of_commerce.webp" alt="San Ramon Chamber of Commerce Logo" width="100"
+                    height="100">
+            </a>
+        </div>
+        <h1>San Ramon Chamber of Commerce</h1>
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </header>
+
+    <nav id="mainNav">
+        <ul id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="thankyou.html" class="Active">Join</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="thankyou-container">
+            <div class="thankyou-card">
+                <h2>Thank You for Your Application!</h2>
+                <div class="thankyou-icon">✓</div>
+                <p class="thankyou-message">Your membership application has been received successfully. We will review your information and contact you within 2-3 business days.</p>
+                
+                <div class="application-details">
+                    <h3>Application Summary</h3>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Name:</span>
+                            <span class="detail-value" id="displayName">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Email:</span>
+                            <span class="detail-value" id="displayEmail">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Phone:</span>
+                            <span class="detail-value" id="displayPhone">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Business:</span>
+                            <span class="detail-value" id="displayBusiness">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Membership:</span>
+                            <span class="detail-value" id="displayMembership">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Submission Date:</span>
+                            <span class="detail-value" id="displayTimestamp">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next-steps">
+                    <h4>What Happens Next?</h4>
+                    <ol>
+                        <li>Our membership committee will review your application</li>
+                        <li>You'll receive a welcome email with next steps</li>
+                        <li>We'll schedule an orientation meeting</li>
+                        <li>Your membership benefits will be activated</li>
+                    </ol>
+                </div>
+
+                <div class="thankyou-actions">
+                    <a href="index.html" class="btn primary">Return to Home</a>
+                    <a href="directory.html" class="btn secondary">Browse Directory</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="currentYear"></span> San Ramon Chamber of Commerce</p>
+            <p>Contact: info@sanramonchamber.org | Phone: (506) 555-1234</p>
+            <p>75 meters south of the southwest corner of Alberto Manuel Brenes Park, Alajuela Province, San Ramón</p>
+            <p>Developed by Dany Jimenez | WDD 231 | Last Modified: <span id="lastModified"></span></p>
+
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                    <img src="images/facebook.png" alt="Follow us on Facebook" width="24" height="24">
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                    <img src="images/twitter.png" alt="Follow us on Twitter" width="24" height="24">
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <img src="images/instagram.png" alt="Follow us on Instagram" width="24" height="24">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/thankyou.js" defer></script>
+</body>
+
+</html>
