@@ -17,16 +17,25 @@
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Eliminado CDN externo -->
+    <style>
+        /* Minimal normalize.css */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { line-height: 1.15; }
+        body { margin: 0; }
+        main { display: block; }
+    </style>
+
     <link rel="stylesheet" href="styles/directorysmall.css">
     <link rel="stylesheet" href="styles/directorylargue.css">
     <link rel="stylesheet" href="styles/join.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap"
-        rel="stylesheet">
+    <!-- System fonts instead of Google Fonts -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+    </style>
 
     <title>San Ramon Chamber of Commerce | Join</title>
 </head>
@@ -36,7 +45,7 @@
         <div class="logo">
             <a href="index.html">
                 <img src="images/chamber_of_commerce.webp" alt="San Ramon Chamber of Commerce Logo" width="100"
-                    height="100">
+                    height="100" loading="lazy">
             </a>
         </div>
         <h1>San Ramon Chamber of Commerce</h1>
@@ -117,7 +126,8 @@
                                   title="Describe your business or organization"></textarea>
                     </div>
 
-                    <input type="hidden" id="timestamp" name="timestamp">
+                    <!-- TIMESTAMP CORREGIDO - se setea con JavaScript -->
+                    <input type="hidden" id="timestamp" name="timestamp" value="">
 
                     <button type="submit" class="submit-btn">Submit Application</button>
                 </form>
@@ -126,7 +136,7 @@
             <div class="membership-cards-section">
                 <h3>Membership Levels</h3>
                 <div class="membership-cards">
-                    <div class="card np-card">
+                    <div class="card np-card" data-card-index="0">
                         <h4>NP Membership</h4>
                         <p class="price">Free</p>
                         <p class="card-desc">For non-profit organizations</p>
@@ -138,7 +148,7 @@
                         <button class="learn-more" data-modal="np-modal">Learn More</button>
                     </div>
 
-                    <div class="card bronze-card">
+                    <div class="card bronze-card" data-card-index="1">
                         <h4>Bronze</h4>
                         <p class="price">$200/year</p>
                         <p class="card-desc">Starting business level</p>
@@ -151,7 +161,7 @@
                         <button class="learn-more" data-modal="bronze-modal">Learn More</button>
                     </div>
 
-                    <div class="card silver-card">
+                    <div class="card silver-card" data-card-index="2">
                         <h4>Silver</h4>
                         <p class="price">$400/year</p>
                         <p class="card-desc">Growing business level</p>
@@ -165,7 +175,7 @@
                         <button class="learn-more" data-modal="silver-modal">Learn More</button>
                     </div>
 
-                    <div class="card gold-card">
+                    <div class="card gold-card" data-card-index="3">
                         <h4>Gold</h4>
                         <p class="price">$600/year</p>
                         <p class="card-desc">Premium business level</p>
@@ -183,11 +193,11 @@
             </div>
         </div>
 
-        <!-- Modals -->
-        <div id="np-modal" class="modal">
+        <!-- Modales CORREGIDOS -->
+        <div id="np-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="np-modal-title">
             <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <h3>NP Membership Benefits</h3>
+                <button class="close-modal" aria-label="Close modal">&times;</button>
+                <h3 id="np-modal-title">NP Membership Benefits</h3>
                 <p><strong>Cost:</strong> Free for qualified non-profit organizations</p>
                 <ul>
                     <li>✓ Basic listing in business directory</li>
@@ -201,10 +211,10 @@
             </div>
         </div>
 
-        <div id="bronze-modal" class="modal">
+        <div id="bronze-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="bronze-modal-title">
             <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <h3>Bronze Membership Benefits</h3>
+                <button class="close-modal" aria-label="Close modal">&times;</button>
+                <h3 id="bronze-modal-title">Bronze Membership Benefits</h3>
                 <p><strong>Cost:</strong> $200 per year</p>
                 <ul>
                     <li>✓ All NP Membership benefits</li>
@@ -218,10 +228,10 @@
             </div>
         </div>
 
-        <div id="silver-modal" class="modal">
+        <div id="silver-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="silver-modal-title">
             <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <h3>Silver Membership Benefits</h3>
+                <button class="close-modal" aria-label="Close modal">&times;</button>
+                <h3 id="silver-modal-title">Silver Membership Benefits</h3>
                 <p><strong>Cost:</strong> $400 per year</p>
                 <ul>
                     <li>✓ All Bronze Membership benefits</li>
@@ -236,10 +246,10 @@
             </div>
         </div>
 
-        <div id="gold-modal" class="modal">
+        <div id="gold-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="gold-modal-title">
             <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <h3>Gold Membership Benefits</h3>
+                <button class="close-modal" aria-label="Close modal">&times;</button>
+                <h3 id="gold-modal-title">Gold Membership Benefits</h3>
                 <p><strong>Cost:</strong> $600 per year</p>
                 <ul>
                     <li>✓ All Silver Membership benefits</li>
@@ -265,14 +275,14 @@
             <p>Developed by Dany Jimenez | WDD 231 | Last Modified: <span id="lastModified"></span></p>
 
             <div class="social-links">
-                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-                    <img src="images/facebook.png" alt="Follow us on Facebook" width="24" height="24">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <img src="images/facebook.png" alt="Follow us on Facebook" width="24" height="24" loading="lazy">
                 </a>
-                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-                    <img src="images/twitter.png" alt="Follow us on Twitter" width="24" height="24">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <img src="images/twitter.png" alt="Follow us on Twitter" width="24" height="24" loading="lazy">
                 </a>
-                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                    <img src="images/instagram.png" alt="Follow us on Instagram" width="24" height="24">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <img src="images/instagram.png" alt="Follow us on Instagram" width="24" height="24" loading="lazy">
                 </a>
             </div>
         </div>
