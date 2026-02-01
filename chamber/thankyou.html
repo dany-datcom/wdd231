@@ -17,16 +17,25 @@
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Eliminado CDN externo -->
+    <style>
+        /* Minimal normalize.css */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { line-height: 1.15; }
+        body { margin: 0; }
+        main { display: block; }
+    </style>
+
     <link rel="stylesheet" href="styles/directorysmall.css">
     <link rel="stylesheet" href="styles/directorylargue.css">
     <link rel="stylesheet" href="styles/join.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap"
-        rel="stylesheet">
+    <!-- System fonts instead of Google Fonts -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+    </style>
 
     <title>San Ramon Chamber of Commerce | Thank You</title>
 </head>
@@ -36,7 +45,7 @@
         <div class="logo">
             <a href="index.html">
                 <img src="images/chamber_of_commerce.webp" alt="San Ramon Chamber of Commerce Logo" width="100"
-                    height="100">
+                    height="100" loading="lazy">
             </a>
         </div>
         <h1>San Ramon Chamber of Commerce</h1>
@@ -48,7 +57,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="discover.html">Discover</a></li>
             <li><a href="directory.html">Directory</a></li>
-            <li><a href="thankyou.html" class="Active">Join</a></li>
+            <li><a href="join.html">Join</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -80,12 +89,16 @@
                             <span class="detail-value" id="displayBusiness">Loading...</span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label">Membership:</span>
+                            <span class="detail-label">Membership Level:</span>
                             <span class="detail-value" id="displayMembership">Loading...</span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label">Submission Date:</span>
+                            <span class="detail-label">Application Date:</span>
                             <span class="detail-value" id="displayTimestamp">Loading...</span>
+                        </div>
+                        <div class="detail-item full-width">
+                            <span class="detail-label">Form Data (Debug):</span>
+                            <span class="detail-value" id="debugInfo">Checking URL parameters...</span>
                         </div>
                     </div>
                 </div>
@@ -103,6 +116,7 @@
                 <div class="thankyou-actions">
                     <a href="index.html" class="btn primary">Return to Home</a>
                     <a href="directory.html" class="btn secondary">Browse Directory</a>
+                    <a href="join.html" class="btn tertiary">Submit Another Application</a>
                 </div>
             </div>
         </div>
@@ -116,20 +130,20 @@
             <p>Developed by Dany Jimenez | WDD 231 | Last Modified: <span id="lastModified"></span></p>
 
             <div class="social-links">
-                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-                    <img src="images/facebook.png" alt="Follow us on Facebook" width="24" height="24">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <img src="images/facebook.png" alt="Follow us on Facebook" width="24" height="24" loading="lazy">
                 </a>
-                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-                    <img src="images/twitter.png" alt="Follow us on Twitter" width="24" height="24">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <img src="images/twitter.png" alt="Follow us on Twitter" width="24" height="24" loading="lazy">
                 </a>
-                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                    <img src="images/instagram.png" alt="Follow us on Instagram" width="24" height="24">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <img src="images/instagram.png" alt="Follow us on Instagram" width="24" height="24" loading="lazy">
                 </a>
             </div>
         </div>
     </footer>
 
-    <li><a href="join.html">Join</a></li>
+    <script src="scripts/thankyou.js" defer></script>
 </body>
 
 </html>
