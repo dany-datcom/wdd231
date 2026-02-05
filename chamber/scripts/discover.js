@@ -1,4 +1,4 @@
-
+let places = []; 
 async function loadPlacesData() {
     try {
     
