@@ -96,7 +96,7 @@ function createPlaceCard(place) {
                  onerror="this.src='images/placeholder.webp'; this.alt='Image not available'">
         </figure>
         <div class="place-card-content">
-            <h2>${place.name}</h2>  <!-- CAMBIADO: h3 → h2 para cumplir instrucción -->
+            <h2>${place.name}</h2>
             <address>${place.address}</address>
             <p>${place.description}</p>
             <button class="learn-more-btn">Learn More</button>
@@ -146,29 +146,9 @@ function applyGridAreas() {
     });
 }
 
-// Initialize menu toggle
-function initMenuToggle() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav ul');
-    
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-        });
-        
-        // Cerrar menú al hacer clic en un enlace (para móviles)
-        const navLinks = document.querySelectorAll('nav ul li a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    navMenu.classList.remove('show');
-                }
-            });
-        });
-    }
-}
+// ===== FUNCIONES PARA FOOTER Y MENÚ =====
 
-// Update footer year and last modified
+// Actualizar año y última modificación
 function updateFooter() {
     const currentYear = new Date().getFullYear();
     const lastModified = document.lastModified;
@@ -180,12 +160,30 @@ function updateFooter() {
     if (modifiedElement) modifiedElement.textContent = lastModified;
 }
 
+// Inicializar menú toggle
+function initMenuToggle() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+    
+    if (menuToggle && navMenu) {
+        // Si el menú ya tiene toggle en directorysmall.css, no duplicar
+        if (!menuToggle.hasAttribute('data-listener-added')) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+            });
+            menuToggle.setAttribute('data-listener-added', 'true');
+        }
+    }
+}
+
+// ===== INICIALIZACIÓN =====
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     displayVisitMessage();  // CRITERIO 7
-    loadPlacesData();       // CRITERIO 9 (cambia loadPlaces por loadPlacesData)
-    initMenuToggle();
-    updateFooter();
+    loadPlacesData();       // CRITERIO 9
+    initMenuToggle();       // Menú toggle
+    updateFooter();         // Footer dinámico
     
     console.log('🚀 Discover page initialized');
 });

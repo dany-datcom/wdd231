@@ -26,32 +26,7 @@
     
     <title>San Ramon Chamber of Commerce | Discover Our City</title>
     
-    <!-- Estilos mínimos para discover (si no tienes discover.css aún) -->
-    <style>
-        /* Placeholder para discover.css si no existe aún */
-        .places-grid {
-            display: grid;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .loading {
-            text-align: center;
-            padding: 3rem;
-            font-style: italic;
-            color: #666;
-        }
-        
-        .visit-message {
-            background-color: #e3f2fd;
-            border-left: 4px solid #ff6b00;
-            padding: 1rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
-            text-align: center;
-            font-weight: 600;
-        }
-    </style>
+    
 </head>
 <body>
     <header>
@@ -114,20 +89,5 @@
     <!-- CRITERIO 9: Module script to load JSON -->
     <script src="scripts/discover.js" type="module"></script>
     
-    <!-- Script para footer y menú -->
-    <script>
-        // Actualizar año
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        document.getElementById('lastModified').textContent = document.lastModified;
-        
-        // Menú toggle (si no está en directorysmall.css)
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('nav ul');
-        if (menuToggle && navMenu) {
-            menuToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('show');
-            });
-        }
-    </script>
 </body>
 </html>
