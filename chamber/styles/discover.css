@@ -1,0 +1,125 @@
+/* discover.css - Estilos ESPECÍFICOS para Discover page */
+/* Se suma a directorysmall.css y directorylargue.css */
+
+/* CRITERIO 11: Grid con grid-template-areas */
+.places-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+
+.learn-more-btn {
+    display: inline-block;
+    background-color: var(--color-primary, #003366);
+    color: var(--color-white, #ffffff);
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+.learn-more-btn:hover {
+    background-color: var(--color-dark, #212121);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.learn-more-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.learn-more-btn:focus {
+    outline: 3px solid var(--color-accent, #ff6b00);
+    outline-offset: 2px;
+}
+
+/* SMALL: 320px-640px */
+@media (max-width: 640px) {
+    .places-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "a" "b" "c" "d" "e" "f" "g" "h";
+    }
+}
+
+/* MEDIUM: 641px-1024px */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .places-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "a a a"
+            "b c c"
+            "b c c"
+            "d e f"
+            "g g h"
+            "g g h";
+    }
+}
+
+/* LARGE: 1025px+ */
+@media (min-width: 1025px) {
+    .places-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "a a . ."
+            "a a b c"
+            "d e b c"
+            "d e f g"
+            "h h f g"
+            "h h . .";
+    }
+}
+
+/* Asignar áreas */
+.place-card:nth-child(1) { grid-area: a; }
+.place-card:nth-child(2) { grid-area: b; }
+.place-card:nth-child(3) { grid-area: c; }
+.place-card:nth-child(4) { grid-area: d; }
+.place-card:nth-child(5) { grid-area: e; }
+.place-card:nth-child(6) { grid-area: f; }
+.place-card:nth-child(7) { grid-area: g; }
+.place-card:nth-child(8) { grid-area: h; }
+
+/* CRITERIO 10: Estilos de cards (añaden a los de directory) */
+.place-card {
+    background-color: var(--color-card-bg, #ffffff);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.place-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--color-primary, #003366);
+}
+
+/* CRITERIO 13: Hover effect SOLO en desktop */
+@media (min-width: 641px) {
+    .place-card:hover img {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+}
+
+/* CRITERIO 7: Visit message */
+.visit-message {
+    background-color: var(--color-weather-bg, #e3f2fd);
+    border-left: 4px solid var(--color-accent, #ff6b00);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-weather-text, #1a365d);
+}

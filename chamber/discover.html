@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the best places in San Ramon - parks, museums, restaurants, and cultural sites in our beautiful city.">
+    <meta name="author" content="Dany Jimenez">
+    <meta property="og:title" content="San Ramon Chamber of Commerce - Discover Our City">
+    <meta property="og:description" content="Explore 8 amazing places in San Ramon. From nature to culture, find what makes our city special.">
+    <meta property="og:image" content="https://dany-datcom.github.io/wdd231/chamber/images/og-image.png">
+    <meta property="og:url" content="https://dany-datcom.github.io/wdd231/chamber/discover.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- SIGUIENDO INSTRUCCIONES: Usar CSS existente -->
+    <link rel="stylesheet" href="styles/directorysmall.css">
+    <link rel="stylesheet" href="styles/directorylargue.css">
+    <!-- AÑADIR: CSS específico para discover -->
+    <link rel="stylesheet" href="styles/discover.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <title>San Ramon Chamber of Commerce | Discover Our City</title>
+    
+    <!-- Estilos mínimos para discover (si no tienes discover.css aún) -->
+    <style>
+        /* Placeholder para discover.css si no existe aún */
+        .places-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .visit-message {
+            background-color: #e3f2fd;
+            border-left: 4px solid #ff6b00;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/chamber_of_commerce.webp" alt="San Ramon Chamber of Commerce Logo" width="100" height="100">
+            </a>
+        </div>
+        <h1>San Ramon Chamber of Commerce</h1>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="discover.html" class="active">Discover</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- CRITERIO 7: localStorage message -->
+        <div id="visit-message" class="visit-message">
+            <p>Welcome! Let us know if you have any questions.</p>
+        </div>
+
+        <h2>Discover San Ramon</h2>
+        <p class="subtitle">Explore 8 amazing places in our beautiful city</p>
+
+        <!-- CRITERIO 11: Grid container for 8 cards -->
+        <section id="places-container" class="places-grid">
+            <!-- Cards will be dynamically loaded from JSON -->
+            <div class="loading">Loading places...</div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="currentYear"></span> San Ramon Chamber of Commerce</p>
+            <p>Contact: info@sanramonchamber.org | Phone: (506) 555-1234</p>
+            <p>75 meters south of the southwest corner of Alberto Manuel Brenes Park, Alajuela Province, San Ramón</p>
+            <p>Developed by Dany Jimenez | WDD 231 | Last Modified: <span id="lastModified"></span></p>
+            
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                    <img src="images/facebook.png" alt="Follow us on Facebook" width="24" height="24">
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                    <img src="images/twitter.png" alt="Follow us on Twitter" width="24" height="24">
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <img src="images/instagram.png" alt="Follow us on Instagram" width="24" height="24">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CRITERIO 9: Module script to load JSON -->
+    <script src="scripts/discover.js" type="module"></script>
+    
+    <!-- Script para footer y menú -->
+    <script>
+        // Actualizar año
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = document.lastModified;
+        
+        // Menú toggle (si no está en directorysmall.css)
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+            });
+        }
+    </script>
+</body>
+</html>
