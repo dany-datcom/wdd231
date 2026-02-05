@@ -10,15 +10,6 @@
     margin: 2rem 0;
 }
 
-/* Loading state */
-.loading {
-    text-align: center;
-    padding: 3rem;
-    font-style: italic;
-    color: var(--color-silver, #666);
-    grid-column: 1 / -1;
-}
-
 /* Subtitle bajo el h2 */
 .subtitle {
     text-align: center;
