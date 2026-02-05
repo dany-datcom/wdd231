@@ -28,7 +28,7 @@
 
 
     nav {
-        background-color: (--color-primary);
+        background-color: var(--color-primary);
         box-shadow: none;
     }
 
