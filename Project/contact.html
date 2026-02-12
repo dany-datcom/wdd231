@@ -337,13 +337,14 @@
 
     <!-- Product Detail Modal -->
     <dialog class="product-modal" id="product-modal" aria-labelledby="product-modal-title">
-        <div class="product-modal-content">
+    <div class="product-modal-content">
+        <div class="product-modal-header">
+            <h2 id="product-modal-title">Product Details</h2>  <!-- ✅ AGREGAR ESTO -->
             <button class="close-modal" id="close-product-modal" aria-label="Close product details">×</button>
-            <div class="product-modal-body" id="product-modal-body">
-                <!-- Contenido dinámico del producto -->
-            </div>
         </div>
-    </dialog>
+        <div class="product-modal-body" id="product-modal-body"></div>
+    </div>
+</dialog>
 
     <!-- REQUERIDO: JavaScript con Módulos ES -->
     <script type="module" src="scripts/main.js"></script>
