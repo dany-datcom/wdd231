@@ -799,7 +799,7 @@ button:focus {
 }
 
 /* High contrast mode support */
-@media (prefers-contrast: high) {
+@media (prefers-contrast: more) {
     :root {
         --primary-color: #8A4EC8;
         --secondary-color: #5A4A83;

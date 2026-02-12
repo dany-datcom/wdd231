@@ -370,13 +370,13 @@
 .policy-card:nth-child(4) h3::before { content: "💳 "; }
 
 /* ===== FORM VALIDATION STYLES ===== */
-.form-group input:user-valid,
+.form-group input:valid,
 .form-group select:user-valid,
 .form-group textarea:user-valid {
     border-color: #4CAF50;
 }
 
-.form-group input:user-invalid,
+.form-group input:invalid,
 .form-group select:user-invalid,
 .form-group textarea:user-invalid {
     border-color: #ff4444;
@@ -580,7 +580,7 @@
 }
 
 /* ===== HIGH CONTRAST MODE ===== */
-@media (prefers-contrast: high) {
+@media (prefers-contrast: more) {
     .contact-form {
         border: 2px solid var(--dark-contrast);
     }
