@@ -6,72 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- REQUERIDO: Meta tags completos -->
-    <meta name="description"
-        content="Contact Dama Shop for inquiries about women's fashion, orders, sizes and customer service">
-    <meta name="author" content="Dama Shop">
+    <meta name="description" content="Contact Dama Shop for inquiries about women's fashion, orders, sizes and customer service. Customer service available Monday-Friday 9am-6pm.">
+    <meta name="author" content="Josue Daniel Cordero Castro - Dama Shop">
 
-    <!-- REQUERIDO: Open Graph tags -->
-    <meta property="og:title" content="Contact Us | Dama Shop">
-    <meta property="og:description" content="Get in touch with Dama Shop for fashion inquiries and customer support">
+    <!-- REQUERIDO: Open Graph tags - CORREGIDO -->
+    <meta property="og:title" content="Contact Us | Dama Shop - Women's Fashion">
+    <meta property="og:description" content="Get in touch with Dama Shop for fashion inquiries, orders, size guides, returns, and customer support. We're here to help!">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dany-datcom.github.io/wdd231/Project/index.html">
-    <meta property="og:image" content="https://dany-datcom.github.io/wdd231/Project/images/products/blouse1.webp">
-
+    <meta property="og:url" content="https://dany-datcom.github.io/wdd231/Project/contact.html">
+    <meta property="og:image" content="https://dany-datcom.github.io/wdd231/Project/images/damalogo1.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <title>Contact Us | Dama Shop - Women's Fashion</title>
 
     <!-- Favicon consistente -->
     <link rel="icon" href="images/damalogo2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/damalogo2.png">
 
+    <!-- CSS - ORDEN CORRECTO -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/modal.css">
-    <!-- Solo si es necesario: -->
     <link rel="stylesheet" href="styles/products.css">
     <link rel="stylesheet" href="styles/contact.css">
 
     <!-- Fonts optimizadas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
-        as="style">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
+  
     <!-- Header -->
     <header class="main-header">
-        <div class="container header-container">
+        <div class="dama-container header-container">
             <div class="logo">
                 <a href="index.html" aria-label="Go to Dama Shop homepage">
                     <div class="logo-container">
-                        <!-- Imagen optimizada con WebP -->
                         <picture>
                             <source srcset="images/damalogo1.webp" type="image/webp">
-                            <img src="images/damalogo1.png" alt="Dama Shop Logo" class="logo-image" loading="lazy"
-                                width="150" height="50">
+                            <img src="images/damalogo1.webp" alt="Dama Shop Logo" class="logo-image" loading="eager" width="150" height="50">
                         </picture>
                     </div>
                 </a>
             </div>
 
             <!-- Botón menú móvil con ARIA mejorado -->
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
-                aria-controls="main-nav">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
                 <span class="bar" aria-hidden="true"></span>
                 <span class="bar" aria-hidden="true"></span>
                 <span class="bar" aria-hidden="true"></span>
             </button>
 
-            <!-- Navegación principal -->
+            <!-- Navegación principal - CORREGIDO: dama-nav-link -->
             <nav class="main-nav" id="main-nav" aria-label="Main navigation">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="products.html" class="nav-link">Products</a></li>
-                    <li><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
+                    <li><a href="index.html" class="dama-nav-link">Home</a></li>
+                    <li><a href="products.html" class="dama-nav-link">Products</a></li>
+                    <li><a href="contact.html" class="dama-nav-link active" aria-current="page">Contact</a></li>
                     <li class="nav-icons">
                         <button class="icon-btn search-btn" id="search-toggle" aria-label="Search products">
                             <span class="icon" aria-hidden="true">🔍</span>
@@ -92,15 +87,14 @@
     <!-- Search Overlay -->
     <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search dialog" hidden>
         <div class="search-container">
-            <input type="search" id="search-input" placeholder="Search products..." aria-label="Search products"
-                autocomplete="off">
+            <input type="search" id="search-input" placeholder="Search products..." aria-label="Search products" autocomplete="off">
             <button class="close-search" id="close-search" aria-label="Close search">×</button>
             <div class="search-results" id="search-results" aria-live="polite" hidden></div>
         </div>
     </div>
 
     <main id="main-content" class="contact-page" tabindex="-1">
-        <div class="container">
+        <div class="dama-container">
             <h1 class="page-title">Contact Us</h1>
 
             <div class="contact-grid">
@@ -130,34 +124,34 @@
                     </div>
                 </section>
 
-                <!-- Contact Form - REQUERIDO: action="form-action.html" -->
+                <!-- Contact Form - CORREGIDO: dama-form-group y dama-btn -->
                 <section class="contact-form-section" aria-labelledby="form-title">
                     <h2 id="form-title">Send Us a Message</h2>
 
-                    <!-- REQUERIDO: Formulario con action a página de acción -->
                     <form id="contact-form" class="contact-form" action="form-action.html" method="get" novalidate>
-                        <div class="form-group">
+                        <!-- Full Name -->
+                        <div class="dama-form-group">
                             <label for="name">Full Name <span class="required">*</span></label>
-                            <input type="text" id="name" name="name" required minlength="2" placeholder="Your full name"
-                                aria-describedby="name-error">
+                            <input type="text" id="name" name="name" required minlength="2" placeholder="Your full name" aria-describedby="name-error">
                             <span class="error-message" id="name-error" role="alert" aria-live="polite"></span>
                         </div>
 
-                        <div class="form-group">
+                        <!-- Email -->
+                        <div class="dama-form-group">
                             <label for="email">Email Address <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required placeholder="your@email.com"
-                                aria-describedby="email-error">
+                            <input type="email" id="email" name="email" required placeholder="your@email.com" aria-describedby="email-error">
                             <span class="error-message" id="email-error" role="alert" aria-live="polite"></span>
                         </div>
 
-                        <div class="form-group">
+                        <!-- Phone -->
+                        <div class="dama-form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890"
-                                pattern="[0-9\-\+\(\)\s]+" aria-describedby="phone-error">
+                            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" pattern="[0-9\-\+\(\)\s]+" aria-describedby="phone-error">
                             <span class="error-message" id="phone-error" role="alert" aria-live="polite"></span>
                         </div>
 
-                        <div class="form-group">
+                        <!-- Subject -->
+                        <div class="dama-form-group">
                             <label for="subject">Subject <span class="required">*</span></label>
                             <select id="subject" name="subject" required aria-describedby="subject-error">
                                 <option value="">Select a subject</option>
@@ -170,31 +164,33 @@
                             <span class="error-message" id="subject-error" role="alert" aria-live="polite"></span>
                         </div>
 
-                        <div class="form-group">
+                        <!-- Message -->
+                        <div class="dama-form-group">
                             <label for="message">Message <span class="required">*</span></label>
-                            <textarea id="message" name="message" rows="5" required
-                                placeholder="Write your message here..." minlength="10" maxlength="500"></textarea>
+                            <textarea id="message" name="message" rows="5" required placeholder="Write your message here..." minlength="10" maxlength="500"></textarea>
                             <span class="error-message" id="message-error" role="alert" aria-live="polite"></span>
                             <div class="char-counter" id="message-counter">0/500 characters</div>
                         </div>
 
-                        <div class="form-group checkbox-group">
+                        <!-- Newsletter Checkbox -->
+                        <div class="checkbox-group">
                             <input type="checkbox" id="newsletter" name="newsletter">
                             <label for="newsletter">Subscribe to newsletter for offers</label>
                         </div>
 
-                        <!-- REQUERIDO: Campos hidden para almacenar datos en localStorage -->
+                        <!-- Hidden timestamp -->
                         <input type="hidden" id="form-timestamp" name="timestamp">
 
-                        <button type="submit" class="btn btn-primary" id="submit-btn">Send Message</button>
+                        <!-- Submit Button - CORREGIDO: dama-btn dama-btn-primary -->
+                        <button type="submit" class="dama-btn dama-btn-primary" id="submit-btn">Send Message</button>
                     </form>
 
                     <!-- Mensajes de éxito/error -->
                     <div id="form-success" class="success-message" hidden role="alert" aria-live="polite">
-                        Message sent successfully! We'll contact you soon.
+                        ✅ Message sent successfully! We'll contact you soon.
                     </div>
                     <div id="form-error" class="error-message" hidden role="alert" aria-live="assertive">
-                        There was an error sending your message. Please try again.
+                        ❌ There was an error sending your message. Please try again.
                     </div>
                 </section>
             </div>
@@ -228,9 +224,9 @@
         </div>
     </main>
 
-    <!-- Footer con enlaces REQUERIDOS -->
+    <!-- Footer -->
     <footer class="main-footer">
-        <div class="container">
+        <div class="dama-container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>Dama Shop</h3>
@@ -243,8 +239,8 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="products.html">Products</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="form-action.html">Order Confirmation</a></li> <!-- NUEVO: REQUERIDO -->
-                        <li><a href="attributions.html">Attributions</a></li> <!-- NUEVO: REQUERIDO -->
+                        <li><a href="form-action.html">Order Confirmation</a></li>
+                        <li><a href="attributions.html">Attributions</a></li>
                     </ul>
                 </div>
 
@@ -259,11 +255,9 @@
 
                 <div class="footer-section">
                     <h4>Newsletter</h4>
-                    <!-- REQUERIDO: Formulario con action -->
                     <form id="newsletter-form" class="newsletter-form" action="form-action.html" method="get">
-                        <input type="email" name="email" placeholder="Your email address"
-                            aria-label="Subscribe to newsletter" required>
-                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                        <input type="email" name="email" placeholder="Your email address" aria-label="Subscribe to newsletter" required>
+                        <button type="submit" class="dama-btn dama-btn-secondary">Subscribe</button>
                     </form>
                 </div>
             </div>
@@ -271,9 +265,8 @@
             <div class="footer-bottom">
                 <p>&copy; <span id="current-year">2025</span> Dama Shop. All rights reserved.</p>
 
-                <!-- REQUERIDO: Enlace al video demo -->
                 <div class="project-links">
-                    <a href="https://youtube.com/tu-video-demo" target="_blank" class="video-link" rel="noopener">
+                    <a href="https://youtu.be/8Lr8cC7mMzo" target="_blank" class="video-link" rel="noopener">
                         📹 View Project Video Demo
                     </a>
                     <span class="separator">|</span>
@@ -281,20 +274,18 @@
                 </div>
 
                 <div class="social-links">
-                    <a href="https://www.facebook.com/danyjsue/?locale=es_LA" aria-label="Facebook" target="_blank"
-                        rel="noopener">
-                        <img src="images/facebook.png" alt="Facebook" loading="lazy" width="24" height="24">
+                    <a href="https://www.facebook.com/danyjsue/?locale=es_LA" aria-label="Facebook" target="_blank" rel="noopener">
+                        <img src="images/facebook.png" alt="Follow Dama Shop on Facebook" loading="lazy" width="24" height="24">
                     </a>
-                    <a href="https://www.instagram.com/dany_jsue/?igsh=MTdpNWg5Y2hzanp4MQ%3D%3D#" aria-label="Instagram"
-                        target="_blank" rel="noopener">
-                        <img src="images/instagram.png" alt="Instagram" loading="lazy" width="24" height="24">
+                    <a href="https://www.instagram.com/dany_jsue/?igsh=MTdpNWg5Y2hzanp4MQ%3D%3D#" aria-label="Instagram" target="_blank" rel="noopener">
+                        <img src="images/instagram.png" alt="Follow Dama Shop on Instagram" loading="lazy" width="24" height="24">
                     </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Cart Modal - Usando <dialog> nativo -->
+    <!-- Cart Modal -->
     <dialog class="cart-modal" id="cart-modal" aria-labelledby="cart-title">
         <div class="cart-content">
             <div class="cart-header">
@@ -312,8 +303,8 @@
                     <p>Total: <span id="cart-total">$0.00</span></p>
                 </div>
                 <div class="cart-actions">
-                    <button class="btn btn-secondary" id="continue-shopping">Continue Shopping</button>
-                    <button class="btn btn-primary" id="checkout-btn">Checkout Now</button>
+                    <button class="dama-btn dama-btn-secondary" id="continue-shopping">Continue Shopping</button>
+                    <button class="dama-btn dama-btn-primary" id="checkout-btn">Checkout Now</button>
                 </div>
             </div>
         </div>
@@ -335,19 +326,19 @@
         </div>
     </dialog>
 
-    <!-- Product Detail Modal -->
+    <!-- Product Detail Modal - CORREGIDO -->
     <dialog class="product-modal" id="product-modal" aria-labelledby="product-modal-title">
-    <div class="product-modal-content">
-        <div class="product-modal-header">
-            <h2 id="product-modal-title">Product Details</h2>  <!-- ✅ AGREGAR ESTO -->
-            <button class="close-modal" id="close-product-modal" aria-label="Close product details">×</button>
+        <div class="product-modal-content">
+            <div class="product-modal-header">
+                <h2 id="product-modal-title" class="sr-only">Product Details</h2>
+                <button class="close-modal" id="close-product-modal" aria-label="Close product details">×</button>
+            </div>
+            <div class="product-modal-body" id="product-modal-body"></div>
         </div>
-        <div class="product-modal-body" id="product-modal-body"></div>
-    </div>
-</dialog>
+    </dialog>
 
-    <!-- REQUERIDO: JavaScript con Módulos ES -->
-    <script type="module" src="scripts/main.js"></script>
+    <!-- JavaScript con Módulos ES - RUTA CORREGIDA -->
+    <script type="module" src="script/main.js"></script>
 </body>
 
 </html>

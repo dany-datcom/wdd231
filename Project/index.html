@@ -6,22 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Meta tags mejorados para SEO -->
-    <meta name="description"
-        content="Dama Shop - Premium women's fashion, blouses, pijamas and accessories in Costa Rica">
-    <meta name="author" content="Dama Shop">
+    <meta name="description" content="Dama Shop - Premium women's fashion, blouses, pijamas and accessories in Costa Rica. Elegant and comfortable styles for every woman.">
+    <meta name="author" content="Josue Daniel Cordero Castro - Dama Shop">
 
-    <!-- Open Graph tags para redes sociales -->
-    <meta property="og:title" content="Dama Shop | Women's Fashion">
-    <meta property="og:description"
-        content="Discover unique style with exclusive collection for confident and elegant women">
+    <!-- Open Graph tags para redes sociales - CORREGIDO -->
+    <meta property="og:title" content="Dama Shop | Women's Fashion & Accessories">
+    <meta property="og:description" content="Discover unique style with exclusive collection for confident and elegant women. Shop blouses, pijamas, accessories and more.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dany-datcom.github.io/wdd231/Project/index.html">
-    <meta property="og:image" content="https://dany-datcom.github.io/wdd231/Project/images/products/blouse1.webp">
+    <meta property="og:image" content="https://dany-datcom.github.io/wdd231/Project/images/damalogo1.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <title>Dama Shop | Women's Fashion & Accessories</title>
 
-    <!-- Favicon único (corregí el duplicado) -->
+    <!-- Favicon consistente - CORREGIDO -->
     <link rel="icon" href="images/damalogo2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/damalogo2.png">
 
     <!-- Preconnect optimizado -->
@@ -29,55 +30,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Fonts con preload -->
-    <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
-        as="style">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
+    <!-- CSS - ORDEN CORRECTO -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/modal.css">
-    <!-- Solo si es necesario: -->
     <link rel="stylesheet" href="styles/products.css">
-    <link rel="stylesheet" href="styles/contact.css">
-
-    <!-- Preload imágenes críticas -->
-    <link rel="preload" as="image" href="images/products/pijama1.webp">
+ <!-- Preload imágenes críticas - CORREGIDO -->
+    <link rel="preload" as="image" href="images/elegant.webp">
 </head>
 
 <body>
-    <!-- Skip link mejorado para accesibilidad -->
-   
+    
 
-    <!-- Header & Navigation -->
+    <!-- Header & Navigation - CORREGIDO -->
     <header class="main-header">
-        <div class="container header-container">
+        <div class="dama-container header-container">
             <div class="logo">
                 <a href="index.html" aria-label="Go to Dama Shop homepage">
                     <div class="logo-container">
                         <picture>
                             <source srcset="images/damalogo1.webp" type="image/webp">
-                            <img src="images//damalogo1.webp" alt="Dama Shop Logo" class="logo-image" loading="lazy">    
+                            <img src="images/damalogo1.webp" alt="Dama Shop Logo" class="logo-image" loading="eager" width="150" height="50">
                         </picture>
                     </div>
                 </a>
             </div>
 
-            <!-- Mobile menu button con ARIA mejorado -->
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
-                aria-controls="main-nav">
+            <!-- Mobile menu button -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
                 <span class="bar" aria-hidden="true"></span>
                 <span class="bar" aria-hidden="true"></span>
                 <span class="bar" aria-hidden="true"></span>
             </button>
 
-            <!-- Main Navigation con ID para ARIA -->
+            <!-- Main Navigation - CORREGIDO: dama-nav-link -->
             <nav class="main-nav" id="main-nav" aria-label="Main navigation">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
-                    <li><a href="products.html" class="nav-link">Products</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="index.html" class="dama-nav-link active" aria-current="page">Home</a></li>
+                    <li><a href="products.html" class="dama-nav-link">Products</a></li>
+                    <li><a href="contact.html" class="dama-nav-link">Contact</a></li>
                     <li class="nav-icons">
                         <button class="icon-btn search-btn" id="search-toggle" aria-label="Search products">
                             <span class="icon" aria-hidden="true">🔍</span>
@@ -98,8 +91,7 @@
     <!-- Search Overlay -->
     <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search dialog" hidden>
         <div class="search-container">
-            <input type="search" id="search-input" placeholder="Search products..." aria-label="Search products"
-                autocomplete="off">
+            <input type="search" id="search-input" placeholder="Search products..." aria-label="Search products" autocomplete="off">
             <button class="close-search" id="close-search" aria-label="Close search">×</button>
             <div class="search-results" id="search-results" aria-live="polite" hidden></div>
         </div>
@@ -107,107 +99,100 @@
 
     <!-- Main Content -->
     <main id="main-content" class="main-content" tabindex="-1">
-        <!-- Hero Section -->
+        <!-- Hero Section - CORREGIDO: dama-btn -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero-content">
                 <h1 id="hero-title" class="hero-title">Discover Your Unique Style</h1>
                 <p class="hero-subtitle">Exclusive collection for confident and elegant women</p>
-                <a href="products.html" class="btn btn-primary">View Collection</a>
+                <a href="products.html" class="dama-btn dama-btn-primary">View Collection</a>
             </div>
             <div class="hero-image">
                 <picture>
                     <source srcset="images/elegant.webp" type="image/webp">
-                    <img src="images/elegant.webp" alt="Elegant women's pijama set" loading="lazy">
+                    <img src="images/elegant.webp" alt="Elegant women's pijama set" loading="eager" width="600" height="400">
                 </picture>
             </div>
         </section>
 
-        <!-- Categories Section -->
+        <!-- Categories Section - CORREGIDO: dama-container -->
         <section class="categories" aria-labelledby="categories-title">
-            <div class="container">
+            <div class="dama-container">
                 <h2 id="categories-title" class="section-title">Featured Categories</h2>
                 <div class="categories-grid">
                     <article class="category-card">
                         <div class="category-image">
                             <picture>
                                 <source srcset="images/products/blouse1.webp" type="image/webp">
-                                <img src="images/products/blouse1.webp" alt="Elegant women's blouse" loading="lazy"
-                                    width="300" height="200">
+                                <img src="images/products/blouse1.webp" alt="Elegant women's blouse" loading="lazy" width="300" height="200">
                             </picture>
                         </div>
                         <h3>Blouses</h3>
-                        <a href="products.html?category=blouses" class="category-link"
-                            aria-label="View blouses collection">View More</a>
+                        <a href="products.html?category=blouses" class="category-link" aria-label="View blouses collection">View More</a>
                     </article>
                     <article class="category-card">
                         <div class="category-image">
                             <picture>
                                 <source srcset="images/products/pijama2.webp" type="image/webp">
-                                <img src="images/products/pijama2.webp" alt="Comfortable women's pijama" loading="lazy"
-                                    width="300" height="200">
+                                <img src="images/products/pijama2.webp" alt="Comfortable women's pijama" loading="lazy" width="300" height="200">
                             </picture>
                         </div>
                         <h3>Pijamas</h3>
-                        <a href="products.html?category=pijamas" class="category-link"
-                            aria-label="View pijamas collection">View More</a>
+                        <a href="products.html?category=pijamas" class="category-link" aria-label="View pijamas collection">View More</a>
                     </article>
                     <article class="category-card">
                         <div class="category-image">
                             <picture>
                                 <source srcset="images/products/ring-earring3.webp" type="image/webp">
-                                <img src="images/products/ring-earring3.webp" alt="Fashion jewelry set" loading="lazy"
-                                    width="300" height="200">
+                                <img src="images/products/ring-earring3.webp" alt="Fashion jewelry set" loading="lazy" width="300" height="200">
                             </picture>
                         </div>
                         <h3>Accessories</h3>
-                        <a href="products.html?category=accessories" class="category-link"
-                            aria-label="View accessories collection">View More</a>
+                        <a href="products.html?category=accessories" class="category-link" aria-label="View accessories collection">View More</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Featured Products Section (DINÁMICA con JavaScript) -->
-        <section class="featured-products" aria-labelledby="featured-title">
-            <div class="container">
-                <div class="section-header">
-                    <h2 id="featured-title" class="section-title">Featured Products</h2>
-                    <!-- ELIMINAR LOS FILTROS - NO VAN EN EL HOME 
-            <div class="filter-controls">...</div> 
-            -->
-                </div>
+        <!-- Featured Products Section -->
+        <!-- Featured Products Section -->
+<section class="featured-products" aria-labelledby="featured-title">
+    <div class="dama-container">
+        <div class="section-header">
+            <h2 id="featured-title" class="section-title">Featured Products</h2>
+        </div>
 
-                <!-- Loading indicator - OCULTO POR DEFECTO -->
-                <div id="loading-indicator" class="loading" role="status" aria-live="polite" style="display: none;">
-                    <div class="spinner" aria-hidden="true"></div>
-                    <p>Loading products...</p>
-                </div>
+        <!-- Loading indicator -->
+        <div id="loading-indicator" class="loading" role="status" aria-live="polite" style="display: none;">
+            <div class="spinner" aria-hidden="true"></div>
+            <p>Loading products...</p>
+        </div>
 
-                <!-- Products grid (se llena dinámicamente) -->
-                <div class="products-grid" id="featured-products">
-                    <!-- Los productos destacados se cargan aquí -->
-                </div>
+        <!-- ✅ PRODUCTS GRID - CON ID CORRECTO -->
+        <div class="products-grid" id="featured-products"></div>
 
-                <!-- Product count -->
-                <div class="product-count" id="product-count" aria-live="polite">
-                    Showing <span id="visible-count">0</span> featured products
-                </div>
-            </div>
-        </section>
+        <!-- Product count -->
+        <div class="product-count" id="product-count" aria-live="polite">
+            Showing <span id="visible-count">0</span> featured products
+        </div>
+        
+        <!-- Ver todos -->
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="products.html" class="dama-btn dama-btn-secondary">View All Products</a>
+        </div>
+    </div>
+</section>
 
-        <!-- Testimonials Section -->
+        <!-- Testimonials Section - CORREGIDO: dama-container -->
         <section class="testimonials" aria-labelledby="testimonials-title">
-            <div class="container">
+            <div class="dama-container">
                 <h2 id="testimonials-title" class="section-title">What Our Customers Say</h2>
                 <div class="testimonials-slider">
                     <div class="testimonial-card">
-                        <p class="testimonial-text">"The quality of the garments exceeded my expectations. I feel
-                            confident and elegant."</p>
+                        <p class="testimonial-text">"The quality of the garments exceeded my expectations. I feel confident and elegant."</p>
                         <p class="testimonial-author">- Maria Gonzalez</p>
                     </div>
                     <div class="testimonial-card">
-                        <p class="testimonial-text">"Excellent service and size advice. I'll definitely shop here
-                            again!"</p>
+                        <p class="testimonial-text">"Excellent service and size advice. I'll definitely shop here again!"</p>
                         <p class="testimonial-author">- Ana Rodriguez</p>
                     </div>
                 </div>
@@ -215,9 +200,9 @@
         </section>
     </main>
 
-    <!-- Footer con enlaces REQUERIDOS -->
+    <!-- Footer - CORREGIDO -->
     <footer class="main-footer">
-        <div class="container">
+        <div class="dama-container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>Dama Shop</h3>
@@ -230,8 +215,8 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="products.html">Products</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="form-action.html">Order Confirmation</a></li> <!-- NUEVO -->
-                        <li><a href="attributions.html">Attributions</a></li> <!-- NUEVO Y REQUERIDO -->
+                        <li><a href="form-action.html">Order Confirmation</a></li>
+                        <li><a href="attributions.html">Attributions</a></li>
                     </ul>
                 </div>
 
@@ -247,9 +232,8 @@
                 <div class="footer-section">
                     <h4>Newsletter</h4>
                     <form id="newsletter-form" class="newsletter-form" action="form-action.html" method="get">
-                        <input type="email" name="email" placeholder="Your email address"
-                            aria-label="Subscribe to newsletter" required>
-                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                        <input type="email" name="email" placeholder="Your email address" aria-label="Subscribe to newsletter" required>
+                        <button type="submit" class="dama-btn dama-btn-secondary">Subscribe</button>
                     </form>
                     <div class="newsletter-message" id="newsletter-message" hidden></div>
                 </div>
@@ -258,9 +242,9 @@
             <div class="footer-bottom">
                 <p>&copy; <span id="current-year">2025</span> Dama Shop. All rights reserved.</p>
 
-                <!-- ENLACE AL VIDEO DEMO - REQUERIDO -->
+                <!-- ENLACE AL VIDEO DEMO - CORREGIR URL -->
                 <div class="project-links">
-                    <a href="https://youtube.com/tu-video-demo" target="_blank" class="video-link">
+                    <a href="https://youtu.be/8Lr8cC7mMzo" target="_blank" class="video-link" rel="noopener">
                         📹 View Project Video Demo
                     </a>
                     <span class="separator">|</span>
@@ -268,20 +252,18 @@
                 </div>
 
                 <div class="social-links">
-                    <a href="https://www.facebook.com/danyjsue/?locale=es_LA" aria-label="Facebook" target="_blank"
-                        rel="noopener">
-                        <img src="images/facebook.png" alt="Facebook" loading="lazy" width="24" height="24">
+                    <a href="https://www.facebook.com/danyjsue/?locale=es_LA" aria-label="Facebook" target="_blank" rel="noopener">
+                        <img src="images/facebook.png" alt="Follow Dama Shop on Facebook" loading="lazy" width="24" height="24">
                     </a>
-                    <a href="https://www.instagram.com/dany_jsue/?igsh=MTdpNWg5Y2hzanp4MQ%3D%3D#" aria-label="Instagram"
-                        target="_blank" rel="noopener">
-                        <img src="images/instagram.png" alt="Instagram" loading="lazy" width="24" height="24">
+                    <a href="https://www.instagram.com/dany_jsue/?igsh=MTdpNWg5Y2hzanp4MQ%3D%3D#" aria-label="Instagram" target="_blank" rel="noopener">
+                        <img src="images/instagram.png" alt="Follow Dama Shop on Instagram" loading="lazy" width="24" height="24">
                     </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Cart Modal -->
+    <!-- Cart Modal - CORREGIDO -->
     <dialog class="cart-modal" id="cart-modal" aria-labelledby="cart-title">
         <div class="cart-content">
             <div class="cart-header">
@@ -289,7 +271,6 @@
                 <button class="close-cart" id="close-cart" aria-label="Close cart">×</button>
             </div>
             <div class="cart-items" id="cart-items" aria-live="polite">
-                <!-- Los productos del carrito aparecerán aquí -->
                 <div class="empty-cart-message">
                     <p>🛒 Your cart is empty</p>
                     <p>Add some products to get started!</p>
@@ -300,15 +281,14 @@
                     <p>Total: <span id="cart-total">$0.00</span></p>
                 </div>
                 <div class="cart-actions">
-                    <button class="btn btn-secondary continue-shopping" id="continue-shopping">Continue
-                        Shopping</button>
-                    <button class="btn btn-primary" id="checkout-btn">Checkout Now</button>
+                    <button class="dama-btn dama-btn-secondary" id="continue-shopping">Continue Shopping</button>
+                    <button class="dama-btn dama-btn-primary" id="checkout-btn">Checkout Now</button>
                 </div>
             </div>
         </div>
     </dialog>
 
-    <!-- Favorites Modal -->
+    <!-- Favorites Modal - CORREGIDO -->
     <dialog class="favorites-modal" id="favorites-modal" aria-labelledby="favorites-title">
         <div class="favorites-content">
             <div class="favorites-header">
@@ -316,7 +296,6 @@
                 <button class="close-favorites" id="close-favorites" aria-label="Close favorites">×</button>
             </div>
             <div class="favorites-list" id="favorites-list" aria-live="polite">
-                <!-- Los productos favoritos aparecerán aquí -->
                 <div class="empty-favorites-message">
                     <p>🌟 No favorites yet</p>
                     <p>Click the heart icon on products to add them here!</p>
@@ -325,18 +304,18 @@
         </div>
     </dialog>
 
-    <!-- Product Detail Modal -->
+    <!-- Product Detail Modal - CORREGIDO -->
     <dialog class="product-modal" id="product-modal" aria-labelledby="product-modal-title">
-    <div class="product-modal-content">
-        <div class="product-modal-header">
-            <h2 id="product-modal-title">Product Details</h2>  <!-- ✅ AGREGAR ESTO -->
-            <button class="close-modal" id="close-product-modal" aria-label="Close product details">×</button>
+        <div class="product-modal-content">
+            <div class="product-modal-header">
+                <h2 id="product-modal-title" class="sr-only">Product Details</h2>
+                <button class="close-modal" id="close-product-modal" aria-label="Close product details">×</button>
+            </div>
+            <div class="product-modal-body" id="product-modal-body"></div>
         </div>
-        <div class="product-modal-body" id="product-modal-body"></div>
-    </div>
-</dialog>
+    </dialog>
 
-    <!-- JavaScript Modules (REQUERIDOS) -->
+    <!-- JavaScript Modules - RUTA CORREGIDA -->
     <script type="module" src="scripts/main.js"></script>
 </body>
 
