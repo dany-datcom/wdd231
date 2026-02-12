@@ -209,16 +209,51 @@ function renderProducts(products, containerId) {
     updateProductCount(products.length);
 }
 
+/**
+ * Actualiza el contador de productos - CORREGIDO
+ * @param {number} count - Número de productos visibles
+ */
 function updateProductCount(count) {
-    const productCount = document.getElementById('product-count');
+    // Para products.html - contador "Showing X of Y products"
+    const productCount = document.getElementById('products-count') || 
+                        document.getElementById('product-count');
+    
     if (productCount) {
-        const totalProducts = currentProducts.length || window.productsData?.length || 0;
-        productCount.innerHTML = `Showing <span>${count}</span> of <span>${totalProducts}</span> products`;
+        // ✅ OBTENER TOTAL DE PRODUCTOS DE LA FUENTE CORRECTA
+        let totalProducts = 0;
+        
+        // 1. Intentar con allProducts (global)
+        if (window.allProducts && window.allProducts.length > 0) {
+            totalProducts = window.allProducts.length;
+        }
+        // 2. Intentar con productsData
+        else if (window.productsData && window.productsData.length > 0) {
+            totalProducts = window.productsData.length;
+        }
+        // 3. Intentar con currentProducts
+        else if (currentProducts && currentProducts.length > 0) {
+            totalProducts = currentProducts.length;
+        }
+        // 4. Fallback - contar desde el JSON (async)
+        else {
+            // Intentar obtener productos de forma asíncrona
+            import('./api.js').then(module => {
+                module.fetchProducts().then(products => {
+                    window.allProducts = products;
+                    const total = products.length;
+                    productCount.innerHTML = `Showing <span id="visible-count">${count}</span> of <span id="total-count">${total}</span> products`;
+                });
+            });
+            return;
+        }
+        
+        productCount.innerHTML = `Showing <span id="visible-count">${count}</span> of <span id="total-count">${totalProducts}</span> products`;
     }
     
-    const featuredCount = document.getElementById('visible-count');
-    if (featuredCount) {
-        featuredCount.textContent = count;
+    // Para index.html - contador "Showing X featured products"
+    const featuredCount = document.getElementById('product-count');
+    if (featuredCount && featuredCount !== productCount) {
+        featuredCount.innerHTML = `Showing <span id="visible-count">${count}</span> featured products`;
     }
 }
 
