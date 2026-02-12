@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- REQUERIDO: Meta tags completos -->
+    <meta name="description"
+        content="Browse our collection of women's fashion: blouses, pijamas, accessories and more at Dama Shop">
+    <meta name="author" content="Dama Shop">
+
+    <!-- REQUERIDO: Open Graph tags -->
+    <meta property="og:title" content="Products Collection | Dama Shop">
+    <meta property="og:description" content="Discover garments designed to enhance your unique beauty">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tudominio.com/products.html">
+    <meta property="og:image" content="https://tudominio.com/images/damalogo1.webp">
+
+    <title>Products Collection | Dama Shop</title>
+
+    <!-- Favicon consistente -->
+    <link rel="icon" href="images/damalogo2.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <!-- Solo si es necesario: -->
+    <link rel="stylesheet" href="styles/products.css">
+
+
+    <!-- Fonts optimizadas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        as="style">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+   
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Go to Dama Shop homepage">
+                    <div class="logo-container">
+                        <!-- Imagen optimizada -->
+                        <picture>
+                            <source srcset="images/damalogo1.webp" type="image/webp">
+                            <img src="images/damalogo1.png" alt="Dama Shop Logo" class="logo-image" loading="lazy"
+                                width="150" height="50">
+                        </picture>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Botón menú móvil con ARIA mejorado -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="main-nav">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
+
+            <!-- Navegación -->
+            <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link active" aria-current="page">Products</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-icons">
+                        <button class="icon-btn search-btn" id="search-toggle" aria-label="Search products">
+                            <span class="icon" aria-hidden="true">🔍</span>
+                        </button>
+                        <button class="icon-btn cart-btn" id="cart-toggle" aria-label="View shopping cart">
+                            <span class="icon" aria-hidden="true">🛒</span>
+                            <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+                        </button>
+                        <button class="icon-btn favorites-btn" id="favorites-toggle" aria-label="View favorites">
+                            <span class="icon" aria-hidden="true">❤️</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Search Overlay mejorado -->
+    <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search dialog" hidden>
+        <div class="search-container">
+            <input type="search" id="search-input" placeholder="Search products..." aria-label="Search products"
+                autocomplete="off">
+            <button class="close-search" id="close-search" aria-label="Close search">×</button>
+            <div class="search-results" id="search-results" aria-live="polite" hidden></div>
+        </div>
+    </div>
+
+    <main id="main-content" class="products-page" tabindex="-1">
+        <section class="products-header">
+            <div class="container">
+                <h1 id="products-title">Our Collection</h1>
+                <p>Discover garments designed to enhance your unique beauty</p>
+
+                <!-- Info de búsqueda mejorada -->
+                <div class="search-info" id="search-info" hidden>
+                    <p>Showing results for: <strong id="search-term"></strong></p>
+                    <button class="btn btn-secondary" id="clear-search">Clear Search</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="products-controls">
+            <div class="container">
+                <div class="filter-controls">
+                    <!-- Botones con mejor accesibilidad -->
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                    <button class="filter-btn" data-filter="blouses" aria-pressed="false">Blouses</button>
+                    <button class="filter-btn" data-filter="pijamas" aria-pressed="false">Pijamas</button>
+                    <button class="filter-btn" data-filter="pants" aria-pressed="false">Pants</button>
+                    <button class="filter-btn" data-filter="coat" aria-pressed="false">Coat</button>
+                    <button class="filter-btn" data-filter="sport" aria-pressed="false">Sport</button>
+                    <button class="filter-btn" data-filter="shoes" aria-pressed="false">Shoes</button>
+                    <button class="filter-btn" data-filter="accessories" aria-pressed="false">Accessories</button>
+                </div>
+
+                <div class="sort-controls">
+                    <label for="sort-select" class="sort-label">Sort by:</label>
+                    <select id="sort-select" aria-label="Sort products by">
+                        <option value="default">Default</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name A-Z</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="all-products">
+            <div class="container">
+                <!-- Indicador de carga -->
+                <div id="loading-products" class="loading" role="status" aria-live="polite" >
+                    <div class="spinner" aria-hidden="true"></div>
+                    <p>Loading products...</p>
+                </div>
+
+                <!-- Mensaje de error -->
+                <div id="products-error" class="error-message" hidden role="alert">
+                    <p>⚠️ Unable to load products. Please try again later.</p>
+                    <button class="btn btn-secondary" id="retry-loading">Retry</button>
+                </div>
+
+                <!-- Grid de productos (se llena dinámicamente con 15+ productos) -->
+                <div class="products-grid" id="all-products" aria-live="polite">
+                    <!-- Los productos se generan dinámicamente con JavaScript -->
+                    <!-- REQUERIDO: 15+ productos con 4+ propiedades cada uno -->
+                </div>
+
+                <!-- Mensaje sin productos -->
+                <div id="no-products" hidden>
+                    <div class="no-products-message">
+                        <p>No products available in this category.</p>
+                        <button class="btn btn-primary" id="show-all-products">Show All Products</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Size Guide Section -->
+        <section class="size-guide">
+            <div class="container">
+                <h2 class="section-title">Size Guide</h2>
+                <div class="size-table" role="region" aria-labelledby="size-guide-title">
+                    <table>
+                        <caption id="size-guide-title" class="sr-only">Women's clothing size measurements in centimeters
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Size</th>
+                                <th scope="col">Chest (cm)</th>
+                                <th scope="col">Waist (cm)</th>
+                                <th scope="col">Hips (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">XS</th>
+                                <td>81-86</td>
+                                <td>61-66</td>
+                                <td>86-91</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">S</th>
+                                <td>86-91</td>
+                                <td>66-71</td>
+                                <td>91-96</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">M</th>
+                                <td>91-96</td>
+                                <td>71-76</td>
+                                <td>96-101</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">L</th>
+                                <td>96-101</td>
+                                <td>76-81</td>
+                                <td>101-106</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">XL</th>
+                                <td>101-106</td>
+                                <td>81-86</td>
+                                <td>106-111</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer con enlaces REQUERIDOS -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Dama Shop</h3>
+                    <p>Quality women's fashion that empowers and celebrates every woman.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="form-action.html">Order Confirmation</a></li> <!-- NUEVO: REQUERIDO -->
+                        <li><a href="attributions.html">Attributions</a></li> <!-- NUEVO: REQUERIDO -->
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <address>
+                        <p>Email: <a href="mailto:djdjosue220@gmail.com">djdjosue220@gmail.com</a></p>
+                        <p>Phone: <a href="tel:+50663508489">+506 6350 8489</a></p>
+                        <p>San Ramon, Costa Rica</p>
+                    </address>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <!-- Formulario con action REQUERIDA -->
+                    <form id="newsletter-form" class="newsletter-form" action="form-action.html" method="get">
+                        <input type="email" name="email" placeholder="Your email address"
+                            aria-label="Subscribe to newsletter" required>
+                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2025</span> Dama Shop. All rights reserved.</p>
+
+                <!-- REQUERIDO: Enlace al video demo -->
+                <div class="project-links">
+                    <a href="https://youtube.com/tu-video-demo" target="_blank" class="video-link" rel="noopener">
+                        📹 View Project Video Demo
+                    </a>
+                    <span class="separator">|</span>
+                    <a href="attributions.html">📚 Attributions</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/danyjsue/?locale=es_LA" aria-label="Facebook" target="_blank"
+                        rel="noopener">
+                        <img src="images/facebook.png" alt="Facebook" loading="lazy" width="24" height="24">
+                    </a>
+                    <a href="https://www.instagram.com/dany_jsue/?igsh=MTdpNWg5Y2hzanp4MQ%3D%3D#" aria-label="Instagram"
+                        target="_blank" rel="noopener">
+                        <img src="images/instagram.png" alt="Instagram" loading="lazy" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal - Usando <dialog> nativo -->
+    <dialog class="cart-modal" id="cart-modal" aria-labelledby="cart-title">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2 id="cart-title">Your Shopping Cart</h2>
+                <button class="close-cart" id="close-cart" aria-label="Close cart">×</button>
+            </div>
+            <div class="cart-items" id="cart-items" aria-live="polite">
+                <div class="empty-cart-message">
+                    <p>🛒 Your cart is empty</p>
+                    <p>Add some products to get started!</p>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <p>Total: <span id="cart-total">$0.00</span></p>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn btn-secondary" id="continue-shopping">Continue Shopping</button>
+                    <button class="btn btn-primary" id="checkout-btn">Checkout Now</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Favorites Modal -->
+    <dialog class="favorites-modal" id="favorites-modal" aria-labelledby="favorites-title">
+        <div class="favorites-content">
+            <div class="favorites-header">
+                <h2 id="favorites-title">❤️ My Favorites</h2>
+                <button class="close-favorites" id="close-favorites" aria-label="Close favorites">×</button>
+            </div>
+            <div class="favorites-list" id="favorites-list" aria-live="polite">
+                <div class="empty-favorites-message">
+                    <p>🌟 No favorites yet</p>
+                    <p>Click the heart icon on products to add them here!</p>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Product Detail Modal -->
+    <dialog class="product-modal" id="product-modal" aria-labelledby="product-modal-title">
+        <div class="product-modal-content">
+            <button class="close-modal" id="close-product-modal" aria-label="Close product details">×</button>
+            <div class="product-modal-body" id="product-modal-body">
+                <!-- Contenido dinámico del producto -->
+            </div>
+        </div>
+    </dialog>
+
+    <!-- REQUERIDO: JavaScript con Módulos ES -->
+    <script type="module" src="script/main.js"></script>
+</body>
+
+</html>

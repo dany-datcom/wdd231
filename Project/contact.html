@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- REQUERIDO: Meta tags completos -->
+    <meta name="description"
+        content="Contact Dama Shop for inquiries about women's fashion, orders, sizes and customer service">
+    <meta name="author" content="Dama Shop">
+
+    <!-- REQUERIDO: Open Graph tags -->
+    <meta property="og:title" content="Contact Us | Dama Shop">
+    <meta property="og:description" content="Get in touch with Dama Shop for fashion inquiries and customer support">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tudominio.com/contact.html">
+    <meta property="og:image" content="https://tudominio.com/images/damalogo1.webp">
+
+    <title>Contact Us | Dama Shop - Women's Fashion</title>
+
+    <!-- Favicon consistente -->
+    <link rel="icon" href="images/damalogo2.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <!-- Solo si es necesario: -->
+    <link rel="stylesheet" href="styles/products.css">
+    <link rel="stylesheet" href="styles/contact.css">
+
+    <!-- Fonts optimizadas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        as="style">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Go to Dama Shop homepage">
+                    <div class="logo-container">
+                        <!-- Imagen optimizada con WebP -->
+                        <picture>
+                            <source srcset="images/damalogo1.webp" type="image/webp">
+                            <img src="images/damalogo1.png" alt="Dama Shop Logo" class="logo-image" loading="lazy"
+                                width="150" height="50">
+                        </picture>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Botón menú móvil con ARIA mejorado -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="main-nav">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
+
+            <!-- Navegación principal -->
+            <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
+                    <li class="nav-icons">
+                        <button class="icon-btn search-btn" id="search-toggle" aria-label="Search products">
+                            <span class="icon" aria-hidden="true">🔍</span>
+                        </button>
+                        <button class="icon-btn cart-btn" id="cart-toggle" aria-label="View shopping cart">
+                            <span class="icon" aria-hidden="true">🛒</span>
+                            <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+                        </button>
+                        <button class="icon-btn favorites-btn" id="favorites-toggle" aria-label="View favorites">
+                            <span class="icon" aria-hidden="true">❤️</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search dialog" hidden>
+        <div class="search-container">
+            <input type="search" id="search-input" placeholder="Search products..." aria-label="Search products"
+                autocomplete="off">
+            <button class="close-search" id="close-search" aria-label="Close search">×</button>
+            <div class="search-results" id="search-results" aria-live="polite" hidden></div>
+        </div>
+    </div>
+
+    <main id="main-content" class="contact-page" tabindex="-1">
+        <div class="container">
+            <h1 class="page-title">Contact Us</h1>
+
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <section class="contact-info" aria-labelledby="contact-info-title">
+                    <h2 id="contact-info-title">Contact Information</h2>
+                    <div class="info-card">
+                        <h3>📍 Location</h3>
+                        <address>
+                            San Ramon, Alajuela<br>
+                            Costa Rica
+                        </address>
+                    </div>
+                    <div class="info-card">
+                        <h3>📞 Phone</h3>
+                        <p><a href="tel:+50663508489">+506 6350 8489</a></p>
+                    </div>
+                    <div class="info-card">
+                        <h3>✉️ Email</h3>
+                        <p><a href="mailto:djdjosue220@gmail.com">djdjosue220@gmail.com</a></p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🕒 Business Hours</h3>
+                        <p>Monday - Friday: 9am - 6pm</p>
+                        <p>Saturday: 10am - 4pm</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </section>
+
+                <!-- Contact Form - REQUERIDO: action="form-action.html" -->
+                <section class="contact-form-section" aria-labelledby="form-title">
+                    <h2 id="form-title">Send Us a Message</h2>
+
+                    <!-- REQUERIDO: Formulario con action a página de acción -->
+                    <form id="contact-form" class="contact-form" action="form-action.html" method="get" novalidate>
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required minlength="2" placeholder="Your full name"
+                                aria-describedby="name-error">
+                            <span class="error-message" id="name-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com"
+                                aria-describedby="email-error">
+                            <span class="error-message" id="email-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890"
+                                pattern="[0-9\-\+\(\)\s]+" aria-describedby="phone-error">
+                            <span class="error-message" id="phone-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject <span class="required">*</span></label>
+                            <select id="subject" name="subject" required aria-describedby="subject-error">
+                                <option value="">Select a subject</option>
+                                <option value="order">Order Inquiry</option>
+                                <option value="product">Product Information</option>
+                                <option value="size">Size Guide</option>
+                                <option value="return">Return or Exchange</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message" id="subject-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="5" required
+                                placeholder="Write your message here..." minlength="10" maxlength="500"></textarea>
+                            <span class="error-message" id="message-error" role="alert" aria-live="polite"></span>
+                            <div class="char-counter" id="message-counter">0/500 characters</div>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Subscribe to newsletter for offers</label>
+                        </div>
+
+                        <!-- REQUERIDO: Campos hidden para almacenar datos en localStorage -->
+                        <input type="hidden" id="form-timestamp" name="timestamp">
+
+                        <button type="submit" class="btn btn-primary" id="submit-btn">Send Message</button>
+                    </form>
+
+                    <!-- Mensajes de éxito/error -->
+                    <div id="form-success" class="success-message" hidden role="alert" aria-live="polite">
+                        Message sent successfully! We'll contact you soon.
+                    </div>
+                    <div id="form-error" class="error-message" hidden role="alert" aria-live="assertive">
+                        There was an error sending your message. Please try again.
+                    </div>
+                </section>
+            </div>
+
+            <!-- Policies Section -->
+            <section class="policies" aria-labelledby="policies-title">
+                <h2 id="policies-title" class="section-title">Our Policies</h2>
+
+                <div class="policies-grid">
+                    <article class="policy-card">
+                        <h3>📦 Shipping</h3>
+                        <p>Nationwide shipping in 3-5 business days. Express shipping available.</p>
+                    </article>
+
+                    <article class="policy-card">
+                        <h3>🔄 Returns</h3>
+                        <p>30-day return policy. Products must be in original condition.</p>
+                    </article>
+
+                    <article class="policy-card">
+                        <h3>🔒 Privacy</h3>
+                        <p>We protect your personal data. We don't share information with third parties.</p>
+                    </article>
+
+                    <article class="policy-card">
+                        <h3>💳 Secure Payments</h3>
+                        <p>We accept all major credit cards. 100% secure transactions.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer con enlaces REQUERIDOS -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Dama Shop</h3>
+                    <p>Quality women's fashion that empowers and celebrates every woman.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="form-action.html">Order Confirmation</a></li> <!-- NUEVO: REQUERIDO -->
+                        <li><a href="attributions.html">Attributions</a></li> <!-- NUEVO: REQUERIDO -->
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <address>
+                        <p>Email: <a href="mailto:djdjosue220@gmail.com">djdjosue220@gmail.com</a></p>
+                        <p>Phone: <a href="tel:+50663508489">+506 6350 8489</a></p>
+                        <p>San Ramon, Costa Rica</p>
+                    </address>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <!-- REQUERIDO: Formulario con action -->
+                    <form id="newsletter-form" class="newsletter-form" action="form-action.html" method="get">
+                        <input type="email" name="email" placeholder="Your email address"
+                            aria-label="Subscribe to newsletter" required>
+                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2025</span> Dama Shop. All rights reserved.</p>
+
+                <!-- REQUERIDO: Enlace al video demo -->
+                <div class="project-links">
+                    <a href="https://youtube.com/tu-video-demo" target="_blank" class="video-link" rel="noopener">
+                        📹 View Project Video Demo
+                    </a>
+                    <span class="separator">|</span>
+                    <a href="attributions.html">📚 Attributions</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/danyjsue/?locale=es_LA" aria-label="Facebook" target="_blank"
+                        rel="noopener">
+                        <img src="images/facebook.png" alt="Facebook" loading="lazy" width="24" height="24">
+                    </a>
+                    <a href="https://www.instagram.com/dany_jsue/?igsh=MTdpNWg5Y2hzanp4MQ%3D%3D#" aria-label="Instagram"
+                        target="_blank" rel="noopener">
+                        <img src="images/instagram.png" alt="Instagram" loading="lazy" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal - Usando <dialog> nativo -->
+    <dialog class="cart-modal" id="cart-modal" aria-labelledby="cart-title">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2 id="cart-title">Your Shopping Cart</h2>
+                <button class="close-cart" id="close-cart" aria-label="Close cart">×</button>
+            </div>
+            <div class="cart-items" id="cart-items" aria-live="polite">
+                <div class="empty-cart-message">
+                    <p>🛒 Your cart is empty</p>
+                    <p>Add some products to get started!</p>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <p>Total: <span id="cart-total">$0.00</span></p>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn btn-secondary" id="continue-shopping">Continue Shopping</button>
+                    <button class="btn btn-primary" id="checkout-btn">Checkout Now</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Favorites Modal -->
+    <dialog class="favorites-modal" id="favorites-modal" aria-labelledby="favorites-title">
+        <div class="favorites-content">
+            <div class="favorites-header">
+                <h2 id="favorites-title">❤️ My Favorites</h2>
+                <button class="close-favorites" id="close-favorites" aria-label="Close favorites">×</button>
+            </div>
+            <div class="favorites-list" id="favorites-list" aria-live="polite">
+                <div class="empty-favorites-message">
+                    <p>🌟 No favorites yet</p>
+                    <p>Click the heart icon on products to add them here!</p>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Product Detail Modal -->
+    <dialog class="product-modal" id="product-modal" aria-labelledby="product-modal-title">
+        <div class="product-modal-content">
+            <button class="close-modal" id="close-product-modal" aria-label="Close product details">×</button>
+            <div class="product-modal-body" id="product-modal-body">
+                <!-- Contenido dinámico del producto -->
+            </div>
+        </div>
+    </dialog>
+
+    <!-- REQUERIDO: JavaScript con Módulos ES -->
+    <script type="module" src="script/main.js"></script>
+</body>
+
+</html>

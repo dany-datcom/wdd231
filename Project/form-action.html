@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- REQUERIDO: Meta tags -->
+    <meta name="description" content="Form submission confirmation - Dama Shop">
+    <meta name="author" content="Dama Shop">
+    
+    <!-- REQUERIDO: Open Graph tags -->
+    <meta property="og:title" content="Thank You - Dama Shop">
+    <meta property="og:description" content="Your form has been submitted successfully">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tudominio.com/form-action.html">
+    <meta property="og:image" content="https://tudominio.com/images/damalogo1.webp">
+    
+    <title>Thank You - Dama Shop</title>
+    
+    <!-- Favicon consistente -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS base -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos específicos para la página de confirmación */
+        .confirmation-page {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--soft-accent) 0%, var(--background-light) 100%);
+        }
+        
+        .confirmation-container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+        
+        .confirmation-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: #4CAF50;
+            animation: bounce 1s ease infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .confirmation-title {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-family: var(--font-accent);
+            font-size: clamp(2rem, 5vw, 2.5rem);
+        }
+        
+        .confirmation-message {
+            color: var(--dark-contrast);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .order-details {
+            background: var(--background-light);
+            border-radius: var(--border-radius-md);
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .order-details h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-family: var(--font-secondary);
+            text-align: center;
+        }
+        
+        .data-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--soft-accent);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .data-item:last-child {
+            border-bottom: none;
+        }
+        
+        .data-label {
+            font-weight: 600;
+            color: var(--secondary-color);
+            min-width: 150px;
+        }
+        
+        .data-value {
+            color: var(--dark-contrast);
+            flex: 1;
+        }
+        
+        .confirmation-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .confirmation-actions .btn {
+            min-width: 180px;
+        }
+        
+        .confirmation-note {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--soft-accent);
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .confirmation-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .confirmation-actions {
+                flex-direction: column;
+            }
+            
+            .confirmation-actions .btn {
+                width: 100%;
+            }
+            
+            .data-item {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+            
+            .data-label {
+                min-width: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .confirmation-container {
+                padding: 1.5rem 1rem;
+            }
+            
+            .confirmation-icon {
+                font-size: 3rem;
+            }
+        }
+        
+        /* Animación de entrada */
+        .confirmation-container {
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header simplificado -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Go to Dama Shop homepage">
+                    <div class="logo-container">
+                        <picture>
+                            <source srcset="images/damalogo1.webp" type="image/webp">
+                            <img src="images/damalogo1.png" alt="Dama Shop Logo" 
+                                 class="logo-image" loading="lazy" width="150" height="50">
+                        </picture>
+                    </div>
+                </a>
+            </div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="confirmation-page">
+        <div class="container">
+            <div class="confirmation-container">
+                <div class="confirmation-icon">✅</div>
+                
+                <h1 class="confirmation-title">Thank You!</h1>
+                
+                <div class="confirmation-message">
+                    <p>Your form has been submitted successfully.</p>
+                    <p>We have received your message and will contact you shortly.</p>
+                </div>
+                
+                <!-- REQUERIDO: Mostrar datos del formulario -->
+                <div class="order-details">
+                    <h3>Submission Details</h3>
+                    <div id="form-data">
+                        <!-- JavaScript mostrará los datos aquí -->
+                        <p>Loading your submission details...</p>
+                    </div>
+                </div>
+                
+                <div class="confirmation-message">
+                    <p>A confirmation email has been sent to the provided email address.</p>
+                    <p>For immediate assistance, please call us at <a href="tel:+50663508489">+506 6350 8489</a>.</p>
+                </div>
+                
+                <div class="confirmation-actions">
+                    <a href="index.html" class="btn btn-primary">Return to Home</a>
+                    <a href="products.html" class="btn btn-secondary">Continue Shopping</a>
+                    <a href="contact.html" class="btn btn-outline">Send Another Message</a>
+                </div>
+                
+                <div class="confirmation-note">
+                    <p><strong>Note:</strong> This is a demo page for educational purposes.</p>
+                    <p>In a real application, this data would be processed by a server.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer simplificado -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2025</span> Dama Shop. All rights reserved.</p>
+                
+                <!-- REQUERIDO: Enlace al video demo -->
+                <div class="project-links">
+                    <a href="https://youtube.com/tu-video-demo" target="_blank" class="video-link" rel="noopener">
+                        📹 View Project Video Demo
+                    </a>
+                    <span class="separator">|</span>
+                    <a href="attributions.html">📚 Attributions</a>
+                    <span class="separator">|</span>
+                    <a href="index.html">🏠 Home</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // REQUERIDO: Mostrar datos del formulario desde la URL
+        document.addEventListener('DOMContentLoaded', function() {
+            // Actualizar año
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Obtener parámetros de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const formDataElement = document.getElementById('form-data');
+            
+            if (urlParams.toString() === '') {
+                formDataElement.innerHTML = `
+                    <div class="data-item">
+                        <div class="data-label">Status:</div>
+                        <div class="data-value">No form data submitted</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">Timestamp:</div>
+                        <div class="data-value">${new Date().toLocaleString()}</div>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = '';
+            
+            // Procesar cada parámetro
+            urlParams.forEach((value, key) => {
+                // Decodificar valores y formatear keys
+                const decodedValue = decodeURIComponent(value);
+                const formattedKey = formatKey(key);
+                
+                html += `
+                    <div class="data-item">
+                        <div class="data-label">${formattedKey}:</div>
+                        <div class="data-value">${decodedValue}</div>
+                    </div>
+                `;
+            });
+            
+            // Agregar timestamp
+            html += `
+                <div class="data-item">
+                    <div class="data-label">Submitted at:</div>
+                    <div class="data-value">${new Date().toLocaleString()}</div>
+                </div>
+            `;
+            
+            // REQUERIDO: Guardar en localStorage
+            const formData = {};
+            urlParams.forEach((value, key) => {
+                formData[key] = decodeURIComponent(value);
+            });
+            
+            // Guardar historial de envíos
+            const submissions = JSON.parse(localStorage.getItem('formSubmissions') || '[]');
+            submissions.push({
+                ...formData,
+                timestamp: new Date().toISOString(),
+                page: 'contact'
+            });
+            localStorage.setItem('formSubmissions', JSON.stringify(submissions));
+            
+            formDataElement.innerHTML = html;
+            
+            // REQUERIDO: Mostrar mensaje de éxito en consola para demo
+            console.log('✅ Form data processed successfully:');
+            console.table(formData);
+            
+            // Función para formatear keys
+            function formatKey(key) {
+                return key
+                    .replace(/([A-Z])/g, ' $1')
+                    .replace(/^./, str => str.toUpperCase())
+                    .replace(/_/g, ' ')
+                    .replace('email', 'Email')
+                    .replace('name', 'Name')
+                    .replace('subject', 'Subject')
+                    .replace('message', 'Message')
+                    .replace('phone', 'Phone')
+                    .replace('newsletter', 'Newsletter Subscription');
+            }
+        });
+        
+        // REQUERIDO: Manejo de localStorage para el video demo
+        // Esto demuestra el uso de localStorage como requerido en el proyecto
+        function initLocalStorageDemo() {
+            // Guardar visita a esta página
+            const pageVisits = JSON.parse(localStorage.getItem('pageVisits') || '{}');
+            pageVisits.formAction = (pageVisits.formAction || 0) + 1;
+            localStorage.setItem('pageVisits', JSON.stringify(pageVisits));
+            
+            console.log('📊 LocalStorage Demo - Page visits:', pageVisits);
+            
+            // Guardar preferencia de usuario
+            if (!localStorage.getItem('userPreferences')) {
+                localStorage.setItem('userPreferences', JSON.stringify({
+                    theme: 'light',
+                    language: 'en',
+                    visitedPages: ['form-action.html']
+                }));
+            }
+        }
+        
+        // Inicializar cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initLocalStorageDemo);
+        } else {
+            initLocalStorageDemo();
+        }
+    </script>
+    
+    <!-- REQUERIDO: JavaScript principal -->
+    <script type="module" src="script/main.js"></script>
+</body>
+</html>
