@@ -51,50 +51,47 @@
 
 
     <!-- Header & Navigation - CORREGIDO -->
-    <header class="main-header">
-        <div class="dama-container header-container">
-            <div class="logo">
-                <a href="index.html" aria-label="Go to Dama Shop homepage">
-                    <div class="logo-container">
-                        <picture>
-                            <source srcset="images/damalogo1.webp" type="image/webp">
-                            <img src="images/damalogo1.webp" alt="Dama Shop Logo" class="logo-image" loading="eager"
-                                width="150" height="50">
-                        </picture>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Mobile menu button -->
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
-                aria-controls="main-nav">
-                <span class="bar" aria-hidden="true"></span>
-                <span class="bar" aria-hidden="true"></span>
-                <span class="bar" aria-hidden="true"></span>
-            </button>
-
-            <!-- Main Navigation - CORREGIDO: dama-nav-link -->
-            <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="dama-nav-link active" aria-current="page">Home</a></li>
-                    <li><a href="products.html" class="dama-nav-link">Products</a></li>
-                    <li><a href="contact.html" class="dama-nav-link">Contact</a></li>
-                    <li class="nav-icons">
-                        <button class="icon-btn search-btn" id="search-toggle" aria-label="Search products">
-                            <span class="icon" aria-hidden="true">🔍</span>
-                        </button>
-                        <button class="icon-btn cart-btn" id="cart-toggle" aria-label="View shopping cart">
-                            <span class="icon" aria-hidden="true">🛒</span>
-                            <span class="cart-count" id="cart-count" aria-live="polite">0</span>
-                        </button>
-                        <button class="icon-btn favorites-btn" id="favorites-toggle" aria-label="View favorites">
-                            <span class="icon" aria-hidden="true">❤️</span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
+    <!-- Header - SIN BOOTSTRAP -->
+<header class="main-header">
+    <div class="dama-container header-container">
+        <div class="logo">
+            <a href="index.html" aria-label="Go to Dama Shop homepage">
+                <div class="logo-container">
+                    <picture>
+                        <source srcset="images/damalogo1.webp" type="image/webp">
+                        <img src="images/damalogo1.webp" alt="Dama Shop Logo" class="logo-image" loading="eager" width="150" height="50">
+                    </picture>
+                </div>
+            </a>
         </div>
-    </header>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
+        </button>
+
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+            <ul class="nav-list">
+                <li><a href="index.html" class="dama-nav-link active" aria-current="page">Home</a></li>
+                <li><a href="products.html" class="dama-nav-link">Products</a></li>
+                <li><a href="contact.html" class="dama-nav-link">Contact</a></li>
+                <li class="nav-icons">
+                    <button class="icon-btn search-btn" id="search-toggle" aria-label="Search products">
+                        <span class="icon" aria-hidden="true">🔍</span>
+                    </button>
+                    <button class="icon-btn cart-btn" id="cart-toggle" aria-label="View shopping cart">
+                        <span class="icon" aria-hidden="true">🛒</span>
+                        <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+                    </button>
+                    <button class="icon-btn favorites-btn" id="favorites-toggle" aria-label="View favorites">
+                        <span class="icon" aria-hidden="true">❤️</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <!-- Search Overlay -->
     <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search dialog" hidden>
