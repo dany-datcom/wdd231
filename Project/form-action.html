@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- REQUERIDO: Meta tags -->
-    <meta name="description" content="Thank you for contacting Dama Shop. Your form has been submitted successfully. We will respond to your inquiry within 24 hours.">
+    <meta name="description"
+        content="Thank you for contacting Dama Shop. Your form has been submitted successfully. We will respond to your inquiry within 24 hours.">
     <meta name="author" content="Dama Shop">
-    
+
     <!-- REQUERIDO: Open Graph tags -->
     <meta property="og:title" content="Thank You - Dama Shop">
-    <meta property="og:description" content="Thank you for contacting Dama Shop. Your message has been sent successfully. We'll get back to you soon.">
+    <meta property="og:description"
+        content="Thank you for contacting Dama Shop. Your message has been sent successfully. We'll get back to you soon.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dany-datcom.github.io/wdd231/Project/index.html">
-    <meta property="og:url" content="https://dany-datcom.github.io/wdd231/Project/contac.html">
+    <meta property="og:image" content="https://dany-datcom.github.io/wdd231/Project/images/damalogo1.webp">
 
-    
+
     <title>Thank You - Dama Shop</title>
-    
+
     <!-- Favicon consistente -->
     <link rel="icon" href="images/damalogo2.png" type="image/x-icon">
-    
+
     <!-- CSS base -->
-     <link rel="stylesheet" href="styles/main.css">
-     <link rel="stylesheet" href="styles/formaction.css">
-    
-    
-    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/formaction.css">
+
+
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
 
     <!-- Header simplificado -->
@@ -43,8 +49,8 @@
                     <div class="logo-container">
                         <picture>
                             <source srcset="images/damalogo1.webp" type="image/webp">
-                            <img src="images/damalogo1.png" alt="Dama Shop Logo" 
-                                 class="logo-image" loading="lazy" width="150" height="50">
+                            <img src="images/damalogo1.png" alt="Dama Shop Logo" class="logo-image" loading="lazy"
+                                width="150" height="50">
                         </picture>
                     </div>
                 </a>
@@ -63,14 +69,14 @@
         <div class="dama-container">
             <div class="confirmation-container">
                 <div class="confirmation-icon">✅</div>
-                
+
                 <h1 class="confirmation-title">Thank You!</h1>
-                
+
                 <div class="confirmation-message">
                     <p>Your form has been submitted successfully.</p>
                     <p>We have received your message and will contact you shortly.</p>
                 </div>
-                
+
                 <!-- REQUERIDO: Mostrar datos del formulario -->
                 <div class="order-details">
                     <h2>Submission Details</h2>
@@ -79,22 +85,18 @@
                         <p>Loading your submission details...</p>
                     </div>
                 </div>
-                
+
                 <div class="confirmation-message">
                     <p>A confirmation email has been sent to the provided email address.</p>
                     <p>For immediate assistance, please call us at <a href="tel:+50663508489">+506 6350 8489</a>.</p>
                 </div>
-                
+
                 <div class="confirmation-actions">
                     <a href="index.html" class="dama-btn dama-btn-primary">Return to Home</a>
                     <a href="products.html" class="dama-btn dama-btn-secondary">Continue Shopping</a>
                     <a href="contact.html" class="dama-btn dama-btn-outline">Send Another Message</a>
                 </div>
-                
-                <div class="confirmation-note">
-                    <p><strong>Note:</strong> This is a demo page for educational purposes.</p>
-                    <p>In a real application, this data would be processed by a server.</p>
-                </div>
+
             </div>
         </div>
     </main>
@@ -102,25 +104,67 @@
     <!-- Footer simplificado -->
     <footer class="main-footer">
         <div class="dama-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Dama Shop</h3>
+                    <p>Quality women's fashion that empowers and celebrates every woman.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="form-action.html">Order Confirmation</a></li>
+                        <li><a href="attributions.html">Attributions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <address>
+                        <p>Email: <a href="mailto:djdjosue220@gmail.com">djdjosue220@gmail.com</a></p>
+                        <p>Phone: <a href="tel:+50663508489">+506 6350 8489</a></p>
+                        <p>San Ramon, Costa Rica</p>
+                    </address>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <form id="newsletter-form" class="newsletter-form" action="form-action.html" method="get">
+                        <input type="email" name="email" placeholder="Your email address" aria-label="Subscribe to newsletter" required>
+                        <button type="submit" class="dama-btn dama-btn-secondary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
             <div class="footer-bottom">
                 <p>&copy; <span id="current-year">2025</span> Dama Shop. All rights reserved.</p>
-                
-                <!-- REQUERIDO: Enlace al video demo -->
+
                 <div class="project-links">
-                    <a href="https://youtube.com/tu-video-demo" target="_blank" class="video-link" rel="noopener">
+                    <a href="https://youtu.be/8Lr8cC7mMzo" target="_blank" class="video-link" rel="noopener">
                         📹 View Project Video Demo
                     </a>
                     <span class="separator">|</span>
                     <a href="attributions.html">📚 Attributions</a>
-                    <span class="separator">|</span>
-                    <a href="index.html">🏠 Home</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/danyjsue/?locale=es_LA" aria-label="Facebook" target="_blank" rel="noopener">
+                        <img src="images/facebook.png" alt="Follow Dama Shop on Facebook" loading="lazy" width="24" height="24">
+                    </a>
+                    <a href="https://www.instagram.com/dany_jsue/?igsh=MTdpNWg5Y2hzanp4MQ%3D%3D#" aria-label="Instagram" target="_blank" rel="noopener">
+                        <img src="images/instagram.png" alt="Follow Dama Shop on Instagram" loading="lazy" width="24" height="24">
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
-    
+
     <!-- REQUERIDO: JavaScript principal -->
-    
+
     <script type="module" src="scripts/main.js"></script>
 </body>
+
 </html>
