@@ -1,0 +1,120 @@
+/* ===== ATTRIBUTIONS.CSS - ESTILOS ESPECÍFICOS ===== */
+.attributions-page {
+    padding: 3rem 0;
+    min-height: 70vh;
+}
+
+.page-title {
+    font-family: var(--font-accent);
+    color: #510094;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.attributions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.attribution-section {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--primary-color);
+    transition: transform var(--transition-base);
+}
+
+.attribution-section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.attribution-section h2 {
+    font-family: var(--font-secondary);
+    color: var(--dark-contrast);
+    margin-bottom: 1.25rem;
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--soft-accent);
+    padding-bottom: 0.5rem;
+}
+
+.attribution-section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.attribution-section li {
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    background: var(--background-light);
+    border-radius: var(--border-radius-md);
+    border-left: 3px solid var(--soft-accent);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.attribution-section a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.attribution-section a:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+
+/* Color swatches */
+.color-swatch {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    margin-right: 8px;
+    vertical-align: middle;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.color-swatch.primary { background-color: #B47AE2; }
+.color-swatch.secondary { background-color: #7A6AA3; }
+.color-swatch.background { background-color: #FAF7FF; }
+.color-swatch.accent { background-color: #D3C2FF; }
+.color-swatch.text { background-color: #3A3755; }
+
+.attribution-note {
+    background: var(--soft-accent);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border: 2px solid var(--primary-color);
+}
+
+.back-home {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .attributions-page {
+        padding: 2rem 0;
+    }
+    .attributions-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .page-title {
+        font-size: 1.75rem;
+    }
+}
