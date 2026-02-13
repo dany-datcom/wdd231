@@ -281,7 +281,7 @@ export function showError(container, message, showRetry = false) {
         <div class="error-content">
             <span class="error-icon">❌</span>
             <p class="error-text">${message}</p>
-            ${showRetry ? '<button class="btn btn-secondary" id="retry-error">Try Again</button>' : ''}
+            ${showRetry ? '<button class="dama-btn dama-btn-secondary" id="retry-error">Try Again</button>' : ''}
         </div>
     `;
     

@@ -146,7 +146,7 @@ export class ModalManager {
                     <span class="favorite-item-category">${item.category}</span>
                 </div>
                 <div class="favorite-item-actions">
-                    <button class="btn btn-small add-to-cart-fav" onclick="window.addToCart(${item.id}); window.modalManager?.closeModal('favorites-modal');">
+                    <button class="dama-btn dama-btn-small add-to-cart-fav" onclick="window.addToCart(${item.id}); window.modalManager?.closeModal('favorites-modal');">
                         🛒 Add to Cart
                     </button>
                     <button class="btn btn-small remove-fav" onclick="window.toggleFavorite(${item.id});">
@@ -202,11 +202,11 @@ export class ModalManager {
                     </div>
                     
                     <div class="product-modal-actions">
-                        <button class="btn btn-primary add-to-cart-modal" 
+                        <button class="dama-btn dama-btn-primary add-to-cart-modal"
                                 onclick="window.addToCart(${product.id}); window.modalManager?.closeModal('product-modal');">
                             Add to Cart - $${product.price.toFixed(2)}
                         </button>
-                        <button class="btn btn-secondary toggle-favorite-modal" 
+                        <button class="dama-btn dama-btn-secondary toggle-favorite-modal"
                                 onclick="window.toggleFavorite(${product.id}); this.textContent = window.isFavorite(${product.id}) ? '❤️ Remove Favorite' : '🤍 Add to Favorites';">
                             ${window.favorites?.isFavorite(product.id) ? '❤️ Remove Favorite' : '🤍 Add to Favorites'}
                         </button>

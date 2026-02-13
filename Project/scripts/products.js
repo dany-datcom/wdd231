@@ -81,11 +81,11 @@ function renderProducts(products, container) {
                 <p class="product-description">${product.description.substring(0, 60)}...</p>
                 
                 <div class="product-actions">
-                    <button class="btn btn-primary add-to-cart" 
+                    <button class="dama-btn dama-btn-primary add-to-cart"
                             onclick="window.addToCart(${product.id})">
                         Add to Cart
                     </button>
-                    <button class="btn btn-secondary toggle-favorite" 
+                    <button class="dama-btn dama-btn-secondary toggle-favorite"
                             onclick="window.toggleFavorite(${product.id})">
                         🤍
                     </button>
