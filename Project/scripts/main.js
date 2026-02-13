@@ -209,6 +209,52 @@ function renderProducts(products, containerId) {
     updateProductCount(products.length);
 }
 
+
+
+/**
+ * Formatea las keys del formulario
+ */
+function formatKey(key) {
+    return key
+        .replace(/([A-Z])/g, ' $1')
+        .replace(/^./, str => str.toUpperCase())
+        .replace(/_/g, ' ')
+        .replace('email', 'Email')
+        .replace('name', 'Full Name')
+        .replace('subject', 'Subject')
+        .replace('message', 'Message')
+        .replace('phone', 'Phone')
+        .replace('newsletter', 'Newsletter Subscription')
+        .replace('timestamp', 'Submission Time');
+}
+
+/**
+ * Guarda el envío del formulario en localStorage
+ */
+function saveFormSubmission(data) {
+    try {
+        const STORAGE_KEY = 'dama_shop_contact_submissions';
+        const submissions = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+        
+        submissions.push({
+            ...data,
+            submittedAt: new Date().toISOString(),
+            id: Date.now()
+        });
+        
+        // Mantener solo últimos 20
+        if (submissions.length > 20) {
+            submissions.shift();
+        }
+        
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(submissions));
+        console.log('✅ Form submission saved to localStorage');
+    } catch (error) {
+        console.error('❌ Error saving form submission:', error);
+    }
+}
+
+
 /**
  * Actualiza el contador de productos - CORREGIDO
  * @param {number} count - Número de productos visibles
