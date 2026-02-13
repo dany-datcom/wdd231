@@ -1,6 +1,6 @@
 // contact-form.js - Manejo del formulario de contacto
 import { saveToStorage, getFromStorage } from './storage.js';
-import { saveToStorage, getFromStorage, STORAGE_KEYS } from './storage.js';
+
 
 export function initContactForm() {
     const contactForm = document.getElementById('contact-form');
