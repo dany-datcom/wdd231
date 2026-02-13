@@ -5,7 +5,7 @@
 import { CartStorage, FavoritesStorage } from './storage.js';
 import { ModalManager } from './modal.js';
 import { loadProducts, getProducts, filterProductsByCategory, getFeaturedProducts } from './products.js';
-import { showNotification, showLoading, hideLoading, initTheme } from './ui.js';
+import { showNotification, showLoading, hideLoading, initTheme, handleImageError } from './ui.js';
 import { initContactForm } from './contact-form.js';
 
 // ==============================================
@@ -22,6 +22,7 @@ let currentProducts = [];
 window.CartStorage = CartStorage;
 window.FavoritesStorage = FavoritesStorage;
 window.ModalManager = ModalManager;
+window.handleImageError = handleImageError;
 
 // ==============================================
 // FUNCIÓN PRINCIPAL
@@ -156,16 +157,118 @@ function initContactPage() {
     initNewsletter();
 }
 
+// ==============================================
+// ✅ FORM ACTION PAGE - COMPLETAMENTE CORREGIDA
+// ==============================================
 function initFormActionPage() {
-    console.log('📋 Página de confirmación');
+    console.log('📋 Procesando página de confirmación...');
+    
+    // Actualizar año
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+    
+    // Obtener el contenedor
+    const formDataElement = document.getElementById('form-data');
+    if (!formDataElement) {
+        console.error('❌ No se encontró el elemento #form-data');
+        return;
+    }
+    
+    // Obtener parámetros de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Si no hay parámetros, mostrar mensaje
+    if (urlParams.toString() === '') {
+        formDataElement.innerHTML = `
+            <div class="data-item">
+                <span class="data-label">Status:</span>
+                <span class="data-value">No form data submitted</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Timestamp:</span>
+                <span class="data-value">${new Date().toLocaleString()}</span>
+            </div>
+        `;
+        return;
+    }
+    
+    // Construir el HTML con los datos
+    let html = '';
+    const formData = {};
+    
+    urlParams.forEach((value, key) => {
+        const decodedValue = decodeURIComponent(value);
+        formData[key] = decodedValue;
+        
+        // Formatear el nombre del campo
+        let formattedKey = key
+            .replace(/([A-Z])/g, ' $1')
+            .replace(/^./, str => str.toUpperCase())
+            .replace(/_/g, ' ')
+            .replace('email', 'Email')
+            .replace('name', 'Full Name')
+            .replace('subject', 'Subject')
+            .replace('message', 'Message')
+            .replace('phone', 'Phone')
+            .replace('newsletter', 'Newsletter')
+            .replace('timestamp', 'Submission Time');
+        
+        html += `
+            <div class="data-item">
+                <span class="data-label">${formattedKey}:</span>
+                <span class="data-value">${decodedValue || '(empty)'}</span>
+            </div>
+        `;
+    });
+    
+    html += `
+        <div class="data-item">
+            <span class="data-label">Submitted at:</span>
+            <span class="data-value">${new Date().toLocaleString()}</span>
+        </div>
+    `;
+    
+    // Insertar el HTML
+    formDataElement.innerHTML = html;
+    
+    // Guardar en localStorage
+    saveFormSubmission(formData);
+    console.log('✅ Datos del formulario mostrados correctamente');
+    
+    // Función interna para guardar en localStorage
+    function saveFormSubmission(data) {
+        try {
+            const STORAGE_KEY = 'dama_shop_contact_submissions';
+            const submissions = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            
+            submissions.push({
+                ...data,
+                submittedAt: new Date().toISOString(),
+                id: Date.now()
+            });
+            
+            // Mantener solo últimos 20
+            if (submissions.length > 20) {
+                submissions.shift();
+            }
+            
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(submissions));
+            console.log('✅ Form submission saved to localStorage');
+        } catch (error) {
+            console.error('❌ Error saving form submission:', error);
+        }
+    }
 }
 
 function initAttributionsPage() {
     console.log('📚 Página de atribuciones');
+    // La lógica de attributions.html va aquí si es necesaria
 }
 
 // ==============================================
-// RENDERIZADO DE PRODUCTOS
+// RENDERIZADO DE PRODUCTOS - CORREGIDO
 // ==============================================
 function renderProducts(products, containerId) {
     const container = document.getElementById(containerId);
@@ -183,7 +286,7 @@ function renderProducts(products, containerId) {
                      alt="${product.name}"
                      class="product-image"
                      loading="lazy"
-                     onerror="this.onerror=null; this.src='https://via.placeholder.com/300x400/E8D7FF/9C89B8?text=Product'">
+                     onerror="window.handleImageError(this, '${product.name.replace(/'/g, "\\'")}')">
                 ${product.featured ? '<span class="featured-badge">⭐ Featured</span>' : ''}
             </div>
             <div class="product-info">
@@ -193,13 +296,13 @@ function renderProducts(products, containerId) {
                 <p class="product-description">${product.description.substring(0, 80)}${product.description.length > 80 ? '...' : ''}</p>
                 
                 <div class="product-actions">
-                    <button class="btn btn-primary add-to-cart" 
+                    <button class="dama-btn dama-btn-primary add-to-cart" 
                             onclick="window.addToCart(${product.id})">
                         Add to Cart
                     </button>
-                    <button class="btn btn-secondary toggle-favorite" 
+                    <button class="dama-btn dama-btn-secondary toggle-favorite" 
                             onclick="window.toggleFavorite(${product.id})">
-                        ${window.favorites?.isFavorite(product.id) ? '❤️' : '❤️'}
+                        ${window.favorites?.isFavorite(product.id) ? '❤️' : '🤍'}
                     </button>
                 </div>
             </div>
@@ -208,52 +311,6 @@ function renderProducts(products, containerId) {
     
     updateProductCount(products.length);
 }
-
-
-
-/**
- * Formatea las keys del formulario
- */
-function formatKey(key) {
-    return key
-        .replace(/([A-Z])/g, ' $1')
-        .replace(/^./, str => str.toUpperCase())
-        .replace(/_/g, ' ')
-        .replace('email', 'Email')
-        .replace('name', 'Full Name')
-        .replace('subject', 'Subject')
-        .replace('message', 'Message')
-        .replace('phone', 'Phone')
-        .replace('newsletter', 'Newsletter Subscription')
-        .replace('timestamp', 'Submission Time');
-}
-
-/**
- * Guarda el envío del formulario en localStorage
- */
-function saveFormSubmission(data) {
-    try {
-        const STORAGE_KEY = 'dama_shop_contact_submissions';
-        const submissions = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-        
-        submissions.push({
-            ...data,
-            submittedAt: new Date().toISOString(),
-            id: Date.now()
-        });
-        
-        // Mantener solo últimos 20
-        if (submissions.length > 20) {
-            submissions.shift();
-        }
-        
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(submissions));
-        console.log('✅ Form submission saved to localStorage');
-    } catch (error) {
-        console.error('❌ Error saving form submission:', error);
-    }
-}
-
 
 /**
  * Actualiza el contador de productos - CORREGIDO
@@ -265,31 +322,18 @@ function updateProductCount(count) {
                         document.getElementById('product-count');
     
     if (productCount) {
-        // ✅ OBTENER TOTAL DE PRODUCTOS DE LA FUENTE CORRECTA
+        // Obtener total de productos de la fuente correcta
         let totalProducts = 0;
         
-        // 1. Intentar con allProducts (global)
         if (window.allProducts && window.allProducts.length > 0) {
             totalProducts = window.allProducts.length;
-        }
-        // 2. Intentar con productsData
-        else if (window.productsData && window.productsData.length > 0) {
+        } else if (window.productsData && window.productsData.length > 0) {
             totalProducts = window.productsData.length;
-        }
-        // 3. Intentar con currentProducts
-        else if (currentProducts && currentProducts.length > 0) {
+        } else if (currentProducts && currentProducts.length > 0) {
             totalProducts = currentProducts.length;
-        }
-        // 4. Fallback - contar desde el JSON (async)
-        else {
-            // Intentar obtener productos de forma asíncrona
-            import('./api.js').then(module => {
-                module.fetchProducts().then(products => {
-                    window.allProducts = products;
-                    const total = products.length;
-                    productCount.innerHTML = `Showing <span id="visible-count">${count}</span> of <span id="total-count">${total}</span> products`;
-                });
-            });
+        } else {
+            // Fallback - mostrar solo el conteo actual
+            productCount.innerHTML = `Showing <span id="visible-count">${count}</span> products`;
             return;
         }
         
@@ -538,7 +582,7 @@ function updateUI() {
 }
 
 // ==============================================
-// FUNCIONES GLOBALES PARA CART - DISPONIBLES EN TODOS LOS HTML
+// FUNCIONES GLOBALES PARA CART
 // ==============================================
 window.addToCart = function(productId) {
     if (!window.cart) {
@@ -550,8 +594,6 @@ window.addToCart = function(productId) {
     if (product) {
         window.cart.addItem(product);
         updateUI();
-        
-        // 🟢 DISPARAR EVENTO PARA ACTUALIZAR MODAL
         window.dispatchEvent(new CustomEvent('cartUpdated'));
         
         if (typeof window.showNotification === 'function') {
@@ -566,8 +608,6 @@ window.removeFromCart = function(productId) {
     if (!window.cart) return false;
     window.cart.removeItem(productId);
     updateUI();
-    
-    // 🟢 DISPARAR EVENTO PARA ACTUALIZAR MODAL
     window.dispatchEvent(new CustomEvent('cartUpdated'));
     
     if (typeof window.showNotification === 'function') {
@@ -580,10 +620,7 @@ window.updateCartQuantity = function(productId, quantity) {
     if (!window.cart) return false;
     window.cart.updateQuantity(productId, quantity);
     updateUI();
-    
-    // 🟢 DISPARAR EVENTO PARA ACTUALIZAR MODAL
     window.dispatchEvent(new CustomEvent('cartUpdated'));
-    
     return true;
 };
 
@@ -630,12 +667,10 @@ window.toggleFavorite = function(productId) {
             btn.textContent = isNowFavorite ? '❤️' : '🤍';
         }
         
-        // 🟢 DISPARAR EVENTOS
         window.dispatchEvent(new CustomEvent('favoritesUpdated', { 
             detail: { favorites: window.favorites.getFavorites() } 
         }));
         
-        // 🟢 ACTUALIZAR MODAL SI ESTÁ ABIERTO
         if (document.getElementById('favorites-modal')?.open && window.modalManager) {
             window.modalManager.renderFavoritesItems();
         }
@@ -760,6 +795,7 @@ window.getCurrentPage = function() {
 };
 
 window.showNotification = showNotification;
+window.handleImageError = handleImageError;
 
 // ==============================================
 // DEBUG
@@ -768,7 +804,13 @@ window.debug = {
     cart: () => window.cart?.getItems(),
     favorites: () => window.favorites?.getFavorites(),
     products: () => window.productsData,
-    search: (q) => window.searchProducts(q)
+    search: (q) => window.searchProducts(q),
+    formData: () => {
+        const params = new URLSearchParams(window.location.search);
+        const data = {};
+        params.forEach((v, k) => data[k] = v);
+        return data;
+    }
 };
 
 // ==============================================
