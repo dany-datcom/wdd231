@@ -111,7 +111,7 @@
 }
 
 .filter-btn.active {
-    background-color: var(--primary-color);
+    background-color: var(--dark-contrast);
     color: white;
     border-color: var(--primary-color);
     font-weight: 600;
@@ -432,7 +432,7 @@
     text-align: center;
     margin-top: 1.5rem;
     padding: 1rem;
-    color: var(--secondary-color);
+    color: black;
     font-size: 0.95rem;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: var(--border-radius-md);

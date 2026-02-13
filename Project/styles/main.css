@@ -73,7 +73,7 @@ body {
 
 /* ===== TYPOGRAPHY ===== */
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-secondary);
+    font-family: var(--secondary-color);
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -91,7 +91,7 @@ h2 {
 
 h3 {
     font-size: clamp(1.5rem, 3.5vw, 1.75rem);
-    color: var(--secondary-color);
+    color: black;
 }
 
 h4 {
