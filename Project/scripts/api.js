@@ -1,5 +1,5 @@
 // api.js - VERSIÓN CORREGIDA
-const API_URL = '../data/products.json';
+const API_URL = 'data/products.json';
 
 /**
  * Obtiene productos desde el archivo JSON
