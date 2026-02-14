@@ -18,13 +18,13 @@ export async function fetchProducts() {
         
         // REQUERIDO: Parsear JSON
         const data = await response.json();
-        console.log(`✅ ${data.products.length} productos cargados`);
+        console.log(`✅ ${data.products.length} loaded products`);
         
         return data.products || [];
         
     } catch (error) {
         // REQUERIDO: Manejo de errores
-        console.error('❌ Error al cargar productos:', error);
+        console.error('❌ Error loading products:', error);
         return getEmergencyProducts();
     }
 }

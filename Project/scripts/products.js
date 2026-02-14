@@ -24,11 +24,10 @@ export async function loadProducts() {
             }
         }
 
-        // Products page - todos los productos
+
         if (isProductsPage) {
             const container = document.getElementById('all-products');
             if (container) {
-                // Obtener filtro de URL
                 const urlParams = new URLSearchParams(window.location.search);
                 const category = urlParams.get('category') || 'all';
 
@@ -40,8 +39,6 @@ export async function loadProducts() {
                 renderProducts(productsToShow, container);
             }
         }
-
-        // OCULTAR LOADING - IMPORTANTE
         const loaders = document.querySelectorAll('#loading-products, #loading-indicator, .loading');
         loaders.forEach(loader => {
             if (loader) loader.style.display = 'none';
