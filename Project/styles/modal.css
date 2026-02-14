@@ -25,7 +25,7 @@
 }
 
 /* ===== MODAL CONTENT BASE ===== */
-.modal-content {
+.dama-modal-content {
     background-color: var(--white);
     border-radius: var(--border-radius-lg);
     width: 100%;
@@ -39,7 +39,7 @@
 }
 
 /* ===== MODAL HEADER ===== */
-.modal-header {
+.dama-modal-header {
     background-color: var(--primary-color);
     color: var(--white);
     padding: 1.25rem 1.5rem;
@@ -49,7 +49,7 @@
     position: relative;
 }
 
-.modal-header h2 {
+.dama-modal-header h2 {
     color: var(--white);
     margin: 0;
     font-size: 1.5rem;
@@ -85,7 +85,7 @@
 }
 
 /* ===== MODAL BODY ===== */
-.modal-body {
+.dama-modal-body {
     padding: 1.5rem;
     overflow-y: auto;
     flex-grow: 1;
@@ -111,7 +111,7 @@
 }
 
 /* ===== MODAL FOOTER ===== */
-.modal-footer {
+.dama-modal-footer {
     padding: 1.5rem;
     border-top: 2px solid var(--soft-accent);
     background-color: var(--background-light);
@@ -121,7 +121,7 @@
 }
 
 /* ===== CART MODAL - UNIFICADO ===== */
-.cart-modal .modal-content {
+.cart-modal .dama-modal-content {
     max-width: 500px;
 }
 
@@ -282,7 +282,7 @@
 }
 
 /* ===== FAVORITES MODAL ===== */
-.favorites-modal .modal-content {
+.favorites-modal .dama-modal-content {
     max-width: 500px;
 }
 
@@ -395,7 +395,7 @@
 }
 
 /* ===== PRODUCT DETAIL MODAL ===== */
-.product-modal .modal-content {
+.product-modal .dama-modal-content {
     max-width: 800px;
 }
 
@@ -621,14 +621,14 @@
 }
 
 /* ===== MODAL SCROLLBAR STYLING ===== */
-.modal-body::-webkit-scrollbar,
+.dama-modal-body::-webkit-scrollbar,
 .cart-items::-webkit-scrollbar,
 .favorites-list::-webkit-scrollbar,
 .search-results::-webkit-scrollbar {
     width: 8px;
 }
 
-.modal-body::-webkit-scrollbar-track,
+.dama-modal-body::-webkit-scrollbar-track,
 .cart-items::-webkit-scrollbar-track,
 .favorites-list::-webkit-scrollbar-track,
 .search-results::-webkit-scrollbar-track {
@@ -636,7 +636,7 @@
     border-radius: 4px;
 }
 
-.modal-body::-webkit-scrollbar-thumb,
+.dama-modal-body::-webkit-scrollbar-thumb,
 .cart-items::-webkit-scrollbar-thumb,
 .favorites-list::-webkit-scrollbar-thumb,
 .search-results::-webkit-scrollbar-thumb {
@@ -644,7 +644,7 @@
     border-radius: 4px;
 }
 
-.modal-body::-webkit-scrollbar-thumb:hover,
+.dama-modal-body::-webkit-scrollbar-thumb:hover,
 .cart-items::-webkit-scrollbar-thumb:hover,
 .favorites-list::-webkit-scrollbar-thumb:hover,
 .search-results::-webkit-scrollbar-thumb:hover {
@@ -652,7 +652,7 @@
 }
 
 /* Firefox scrollbar */
-.modal-body,
+.dama-modal-body,
 .cart-items,
 .favorites-list,
 .search-results {
@@ -681,19 +681,19 @@
 
 /* Tablet (768px and up) */
 @media (min-width: 768px) {
-    .modal-content {
+    .dama-modal-content {
         max-height: 85vh;
     }
     
-    .modal-header {
+    .dama-modal-header {
         padding: 1.5rem 2rem;
     }
     
-    .modal-body {
+    .dama-modal-body {
         padding: 2rem;
     }
     
-    .modal-footer {
+    .dama-modal-footer {
         padding: 2rem;
         flex-direction: row;
         justify-content: space-between;
@@ -740,7 +740,7 @@
         padding: 2rem;
     }
     
-    .product-modal .modal-content {
+    .product-modal .dama-modal-content {
         max-width: 900px;
     }
     
@@ -755,7 +755,7 @@
 
 /* Large Desktop (1200px and up) */
 @media (min-width: 1200px) {
-    .product-modal .modal-content {
+    .product-modal .dama-modal-content {
         max-width: 1000px;
     }
     
@@ -785,7 +785,7 @@
         padding: 1.25rem;
     }
     
-    .modal-body {
+    .dama-modal-body {
         padding: 1.25rem;
     }
     
@@ -812,12 +812,12 @@
 
 /* ===== DARK MODE SUPPORT ===== */
 @media (prefers-color-scheme: dark) {
-    .modal-content {
+    .dama-modal-content {
         background-color: var(--dark-contrast);
         color: var(--soft-accent);
     }
     
-    .modal-header {
+    .dama-modal-header {
         background-color: var(--secondary-color);
     }
     
@@ -871,7 +871,7 @@
 /* ===== REDUCED MOTION ===== */
 @media (prefers-reduced-motion: reduce) {
     .modal-overlay,
-    .modal-content,
+    .dama-modal-content,
     .search-results {
         animation: none;
     }
@@ -897,7 +897,7 @@
 /* ===== PRINT STYLES ===== */
 @media print {
     .modal-overlay,
-    .modal-content {
+    .dama-modal-content {
         position: static;
         display: block;
         max-width: 100%;
@@ -908,12 +908,12 @@
         animation: none;
     }
     
-    .modal-header {
+    .dama-modal-header {
         background-color: #f5f5f5;
         color: black;
     }
     
-    .modal-header h2 {
+    .dama-modal-header h2 {
         color: black;
     }
     
@@ -925,7 +925,7 @@
         display: none !important;
     }
     
-    .modal-body {
+    .dama-modal-body {
         max-height: none;
         overflow: visible;
     }
