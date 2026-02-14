@@ -1,22 +1,10 @@
-// utils.js - Funciones auxiliares y utilidades
-
-/**
- * REQUERIDO: Array methods demostración
- * Muestra diferentes usos de métodos de array
- */
-
-/**
- * 1. filter() - Filtra productos por categoría
- */
 export function filterByCategory(products, category) {
     return products.filter(product => 
         category === 'all' || product.category === category
     );
 }
 
-/**
- * 2. map() - Transforma productos para mostrar
- */
+
 export function mapProductsForDisplay(products) {
     return products.map(product => ({
         ...product,
@@ -27,9 +15,7 @@ export function mapProductsForDisplay(products) {
     }));
 }
 
-/**
- * 3. reduce() - Calcula el total del carrito
- */
+
 export function calculateCartTotal(cartItems) {
     return cartItems.reduce((total, item) => 
         total + (item.price * item.quantity), 0

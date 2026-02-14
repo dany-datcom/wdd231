@@ -1,20 +1,15 @@
-/* ===== FORM-ACTION.CSS - VERSIÓN OPTIMIZADA ===== */
-/* Estilos para la página de confirmación de formulario */
-
-
 .confirmation-page {
     min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: clamp(1rem, 3vw, 2rem);
-    background: linear-gradient(135deg, 
-        var(--soft-accent) 0%, 
-        var(--background-light) 100%
-    );
+    background: linear-gradient(135deg,
+            var(--soft-accent) 0%,
+            var(--background-light) 100%);
 }
 
-/* ===== CONTENEDOR PRINCIPAL ===== */
+
 .confirmation-container {
     max-width: min(800px, 90%);
     width: 100%;
@@ -26,12 +21,13 @@
     animation: fadeInUp 0.5s ease;
 }
 
-/* ===== ANIMACIONES ===== */
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -39,15 +35,24 @@
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-/* ===== ICONO DE CONFIRMACIÓN ===== */
+
 .confirmation-icon {
     font-size: var(--confirm-icon-size);
     margin-bottom: 1.5rem;
@@ -57,7 +62,7 @@
     line-height: 1;
 }
 
-/* ===== TIPOGRAFÍA ===== */
+
 .confirmation-title {
     color: white;
     margin-bottom: 1rem;
@@ -76,7 +81,7 @@
     margin-right: auto;
 }
 
-/* ===== DETALLES DEL PEDIDO ===== */
+
 .order-details {
     background: var(--background-light);
     border-radius: var(--border-radius-md);
@@ -109,7 +114,7 @@
     border-radius: 2px;
 }
 
-/* ===== ITEMS DE DATOS ===== */
+
 .data-item {
     padding: 0.75rem 0;
     border-bottom: 1px solid var(--soft-accent);
@@ -146,7 +151,7 @@
     word-break: break-word;
 }
 
-/* ===== ACCIONES ===== */
+
 .confirmation-actions {
     display: flex;
     gap: 1rem;
@@ -160,7 +165,7 @@
     padding: 0.875rem 1.5rem;
 }
 
-/* ===== NOTA ===== */
+
 .confirmation-note {
     margin-top: 2rem;
     padding-top: 2rem;
@@ -170,7 +175,7 @@
     font-style: italic;
 }
 
-/* ===== ESTADOS DE CARGA ===== */
+
 .loading-spinner {
     display: inline-block;
     width: 30px;
@@ -183,7 +188,7 @@
     vertical-align: middle;
 }
 
-/* ===== UTILITY CLASSES ===== */
+
 .text-success {
     color: var(--confirm-icon-color);
 }
@@ -194,37 +199,37 @@
     border-radius: var(--border-radius-sm);
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 768px) {
     .confirmation-container {
         padding: 2rem 1.5rem;
     }
-    
+
     .confirmation-actions {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .confirmation-actions .dama-btn {
         width: 100%;
         min-width: auto;
     }
-    
+
     .data-item {
         flex-direction: column;
         gap: 0.25rem;
     }
-    
+
     .data-label {
         min-width: auto;
         font-size: 0.85rem;
     }
-    
+
     .data-value {
         font-size: 1rem;
         padding-left: 0.5rem;
     }
-    
+
     .order-details h3 {
         font-size: 1.2rem;
     }
@@ -234,48 +239,49 @@
     .confirmation-container {
         padding: 1.5rem 1rem;
     }
-    
+
     .confirmation-icon {
         font-size: 3rem;
     }
-    
+
     .confirmation-title {
         font-size: 1.75rem;
     }
 }
 
-/* ===== DARK MODE SUPPORT ===== */
+
 @media (prefers-color-scheme: dark) {
     .confirmation-container {
         background-color: var(--dark-contrast);
         color: white;
     }
-    
+
     .order-details {
         background-color: #2A2640;
     }
-    
+
     .data-item {
         border-bottom-color: var(--secondary-color);
     }
-    
+
     .data-value {
         color: var(--soft-accent);
     }
-    
+
     .confirmation-note {
         color: var(--soft-accent);
         opacity: 0.8;
     }
 }
 
-/* ===== REDUCED MOTION ===== */
+
 @media (prefers-reduced-motion: reduce) {
+
     .confirmation-icon,
     .confirmation-container {
         animation: none;
     }
-    
+
     .loading-spinner {
         animation: none;
         border: 3px solid var(--primary-color);

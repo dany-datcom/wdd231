@@ -4,12 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- REQUERIDO: Meta tags completos -->
     <meta name="description" content="Browse our collection of women's fashion: blouses, pijamas, accessories and more at Dama Shop">
     <meta name="author" content="Dany Jimenez - Dama Shop">
-
-    <!-- REQUERIDO: Open Graph tags - CORREGIDO -->
     <meta property="og:title" content="Products Collection | Dama Shop">
     <meta property="og:description" content="Discover garments designed to enhance your unique beauty. Shop blouses, pijamas, accessories, shoes and more.">
     <meta property="og:type" content="website">
@@ -20,18 +16,13 @@
 
     <title>Products Collection | Dama Shop</title>
 
-    <!-- Favicon consistente -->
     <link rel="icon" href="images/damalogo2.png" type="image/x-icon">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/damalogo2.png">
 
-    <!-- CSS - ORDEN CORRECTO -->
     <link rel="stylesheet" href="styles/main.css">
-    
     <link rel="stylesheet" href="styles/products.css">
-    <!-- contact.css no es necesario en products.html pero no hace daño -->
 
-    <!-- Fonts optimizadas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" as="style">
@@ -39,9 +30,6 @@
 </head>
 
 <body>
-
-
-    <!-- Header - CORREGIDO con dama-nav-link y dama-container -->
     <header class="main-header">
         <div class="dama-container header-container">
             <div class="logo">
@@ -55,14 +43,12 @@
                 </a>
             </div>
 
-            <!-- Botón menú móvil -->
             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
                 <span class="bar" aria-hidden="true"></span>
                 <span class="bar" aria-hidden="true"></span>
                 <span class="bar" aria-hidden="true"></span>
             </button>
 
-            <!-- Navegación - CORREGIDO: dama-nav-link -->
             <nav class="main-nav" id="main-nav" aria-label="Main navigation">
                 <ul class="nav-list">
                     <li><a href="index.html" class="dama-nav-link">Home</a></li>
@@ -85,7 +71,6 @@
         </div>
     </header>
 
-    <!-- Search Overlay -->
     <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search dialog" hidden>
         <div class="search-container">
             <input type="search" id="search-input" placeholder="Search products..." aria-label="Search products" autocomplete="off">
@@ -95,13 +80,11 @@
     </div>
 
     <main id="main-content" class="products-page" tabindex="-1">
-        <!-- Products Header - CORREGIDO: dama-container -->
         <section class="products-header">
             <div class="dama-container">
                 <h1 id="products-title">Our Collection</h1>
                 <p>Discover garments designed to enhance your unique beauty</p>
 
-                <!-- Info de búsqueda -->
                 <div class="search-info" id="search-info" hidden>
                     <p>Showing results for: <strong id="search-term"></strong></p>
                     <button class="dama-btn dama-btn-secondary" id="clear-search">Clear Search</button>
@@ -109,7 +92,6 @@
             </div>
         </section>
 
-        <!-- Products Controls - CORREGIDO: dama-container y dama-btn -->
         <section class="products-controls">
             <div class="dama-container">
                 <div class="filter-controls">
@@ -136,25 +118,20 @@
             </div>
         </section>
 
-        <!-- All Products Section - CORREGIDO: dama-container -->
         <section class="all-products">
             <div class="dama-container">
-                <!-- Indicador de carga -->
                 <div id="loading-products" class="loading hidden" role="status" aria-live="polite">
                     <div class="dama-spinner" aria-hidden="true"></div>
                     <p>Loading products...</p>
                 </div>
 
-                <!-- Mensaje de error -->
                 <div id="products-error" class="error-message" hidden role="alert">
                     <p>⚠️ Unable to load products. Please try again later.</p>
                     <button class="dama-btn dama-btn-secondary" id="retry-loading">Retry</button>
                 </div>
 
-                <!-- Grid de productos -->
                 <div class="products-grid" id="all-products" aria-live="polite"></div>
 
-                <!-- Mensaje sin productos -->
                 <div id="no-products" hidden>
                     <div class="no-products-message">
                         <p>No products available in this category.</p>
@@ -162,14 +139,12 @@
                     </div>
                 </div>
                 
-                <!-- Contador de productos -->
                 <div id="products-count" class="products-count" aria-live="polite">
                     Showing <span id="visible-count">0</span> of <span id="total-count">0</span> products
                 </div>
             </div>
         </section>
 
-        <!-- Size Guide Section - CORREGIDO: dama-container -->
         <section class="size-guide">
             <div class="dama-container">
                 <h2 class="section-title">Size Guide</h2>
@@ -197,7 +172,6 @@
         </section>
     </main>
 
-    <!-- Footer - CORREGIDO: dama-container y dama-btn -->
     <footer class="main-footer">
         <div class="dama-container">
             <div class="footer-grid">
@@ -258,7 +232,6 @@
         </div>
     </footer>
 
-    <!-- Cart Modal - CORREGIDO: dama-btn -->
     <dialog class="cart-modal" id="cart-modal" aria-labelledby="cart-title">
         <div class="cart-content">
             <div class="cart-header">
@@ -283,7 +256,7 @@
         </div>
     </dialog>
 
-    <!-- Favorites Modal - CORREGIDO -->
+    
     <dialog class="favorites-modal" id="favorites-modal" aria-labelledby="favorites-title">
         <div class="favorites-content">
             <div class="favorites-header">
@@ -299,7 +272,7 @@
         </div>
     </dialog>
 
-    <!-- Product Detail Modal - CORREGIDO -->
+    
     <dialog class="product-modal" id="product-modal" aria-labelledby="product-modal-title">
         <div class="product-modal-content">
             <div class="product-modal-header">
@@ -310,7 +283,6 @@
         </div>
     </dialog>
 
-    <!-- JavaScript con Módulos ES - RUTA CORREGIDA -->
     <script type="module" src="scripts/main.js"></script>
 </body>
 

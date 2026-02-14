@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Meta tags mejorados para SEO -->
     <meta name="description"
         content="Dama Shop - Premium women's fashion, blouses, pijamas and accessories in Costa Rica. Elegant and comfortable styles for every woman.">
     <meta name="author" content="Dany Jimenez - Dama Shop">
 
-    <!-- Open Graph tags para redes sociales - CORREGIDO -->
     <meta property="og:title" content="Dama Shop | Women's Fashion & Accessories">
     <meta property="og:description"
         content="Discover unique style with exclusive collection for confident and elegant women. Shop blouses, pijamas, accessories and more.">
@@ -22,14 +19,11 @@
 
     <title>Dama Shop | Women's Fashion & Accessories</title>
 
-    <!-- Favicon consistente - CORREGIDO -->
     <link rel="icon" href="images/damalogo2.png" type="image/x-icon">
-   
-    <!-- Preconnect optimizado -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Fonts con preload -->
     <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
         as="style">
@@ -37,61 +31,57 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
         rel="stylesheet">
 
-    <!-- CSS - ORDEN CORRECTO -->
     <link rel="stylesheet" href="styles/main.css">
-    
     <link rel="stylesheet" href="styles/products.css">
-    <!-- Preload imágenes críticas - CORREGIDO -->
     <link rel="preload" as="image" href="images/elegant.webp">
 </head>
 
 <body>
 
+    <header class="main-header">
+        <div class="dama-container header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Go to Dama Shop homepage">
+                    <div class="logo-container">
+                        <picture>
+                            <source srcset="images/damalogo1.webp" type="image/webp">
+                            <img src="images/damalogo1.webp" alt="Dama Shop Logo" class="logo-image" loading="eager"
+                                width="150" height="50">
+                        </picture>
+                    </div>
+                </a>
+            </div>
 
-    <!-- Header & Navigation - CORREGIDO -->
-    <!-- Header - SIN BOOTSTRAP -->
-<header class="main-header">
-    <div class="dama-container header-container">
-        <div class="logo">
-            <a href="index.html" aria-label="Go to Dama Shop homepage">
-                <div class="logo-container">
-                    <picture>
-                        <source srcset="images/damalogo1.webp" type="image/webp">
-                        <img src="images/damalogo1.webp" alt="Dama Shop Logo" class="logo-image" loading="eager" width="150" height="50">
-                    </picture>
-                </div>
-            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="main-nav">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
+
+            <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="dama-nav-link active" aria-current="page">Home</a></li>
+                    <li><a href="products.html" class="dama-nav-link">Products</a></li>
+                    <li><a href="contact.html" class="dama-nav-link">Contact</a></li>
+                    <li class="nav-icons">
+                        <button class="icon-btn search-btn" id="search-toggle" aria-label="Search products">
+                            <span class="icon" aria-hidden="true">🔍</span>
+                        </button>
+                        <button class="icon-btn cart-btn" id="cart-toggle" aria-label="View shopping cart">
+                            <span class="icon" aria-hidden="true">🛒</span>
+                            <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+                        </button>
+                        <button class="icon-btn favorites-btn" id="favorites-toggle" aria-label="View favorites">
+                            <span class="icon" aria-hidden="true">❤️</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
-            <span class="bar" aria-hidden="true"></span>
-            <span class="bar" aria-hidden="true"></span>
-            <span class="bar" aria-hidden="true"></span>
-        </button>
 
-        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-            <ul class="nav-list">
-                <li><a href="index.html" class="dama-nav-link active" aria-current="page">Home</a></li>
-                <li><a href="products.html" class="dama-nav-link">Products</a></li>
-                <li><a href="contact.html" class="dama-nav-link">Contact</a></li>
-                <li class="nav-icons">
-                    <button class="icon-btn search-btn" id="search-toggle" aria-label="Search products">
-                        <span class="icon" aria-hidden="true">🔍</span>
-                    </button>
-                    <button class="icon-btn cart-btn" id="cart-toggle" aria-label="View shopping cart">
-                        <span class="icon" aria-hidden="true">🛒</span>
-                        <span class="cart-count" id="cart-count" aria-live="polite">0</span>
-                    </button>
-                    <button class="icon-btn favorites-btn" id="favorites-toggle" aria-label="View favorites">
-                        <span class="icon" aria-hidden="true">❤️</span>
-                    </button>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-    <!-- Search Overlay -->
     <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search dialog" hidden>
         <div class="search-container">
             <input type="search" id="search-input" placeholder="Search products..." aria-label="Search products"
@@ -101,9 +91,8 @@
         </div>
     </div>
 
-    <!-- Main Content -->
     <main id="main-content" class="main-content" tabindex="-1">
-        <!-- Hero Section - CORREGIDO: dama-btn -->
+
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero-content">
                 <h1 id="hero-title" class="hero-title">Discover Your Unique Style</h1>
@@ -119,7 +108,6 @@
             </div>
         </section>
 
-        <!-- Categories Section - CORREGIDO: dama-container -->
         <section class="categories" aria-labelledby="categories-title">
             <div class="dama-container">
                 <h2 id="categories-title" class="section-title">Featured Categories</h2>
@@ -164,36 +152,29 @@
             </div>
         </section>
 
-        <!-- Featured Products Section -->
-        <!-- Featured Products Section -->
         <section class="featured-products" aria-labelledby="featured-title">
             <div class="dama-container">
                 <div class="section-header">
                     <h2 id="featured-title" class="section-title">Featured Products</h2>
                 </div>
 
-                <!-- Loading indicator -->
                 <div id="loading-indicator" class="loading hidden" role="status" aria-live="polite">
                     <div class="spinner" aria-hidden="true"></div>
                     <p>Loading products...</p>
                 </div>
 
-                <!-- ✅ PRODUCTS GRID - CON ID CORRECTO -->
                 <div class="products-grid" id="featured-products"></div>
 
-                <!-- Product count -->
                 <div class="product-count" id="product-count" aria-live="polite">
                     Showing <span id="visible-count">0</span> featured products
                 </div>
 
-                <!-- Ver todos -->
                 <div class="view-all-container">
                     <a href="products.html" class="dama-btn dama-btn-secondary">View All Products</a>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Section - CORREGIDO: dama-container -->
         <section class="testimonials" aria-labelledby="testimonials-title">
             <div class="dama-container">
                 <h2 id="testimonials-title" class="section-title">What Our Customers Say</h2>
@@ -213,7 +194,6 @@
         </section>
     </main>
 
-    <!-- Footer - CORREGIDO -->
     <footer class="main-footer">
         <div class="dama-container">
             <div class="footer-grid">
@@ -256,7 +236,6 @@
             <div class="footer-bottom">
                 <p>&copy; <span id="current-year">2025</span> Dama Shop. All rights reserved.</p>
 
-                <!-- ENLACE AL VIDEO DEMO - CORREGIR URL -->
                 <div class="project-links">
                     <a href="https://youtu.be/8Lr8cC7mMzo" target="_blank" class="video-link" rel="noopener">
                         📹 View Project Video Demo
@@ -281,7 +260,6 @@
         </div>
     </footer>
 
-    <!-- Cart Modal - CORREGIDO -->
     <dialog class="cart-modal" id="cart-modal" aria-labelledby="cart-title">
         <div class="cart-content">
             <div class="cart-header">
@@ -306,7 +284,6 @@
         </div>
     </dialog>
 
-    <!-- Favorites Modal - CORREGIDO -->
     <dialog class="favorites-modal" id="favorites-modal" aria-labelledby="favorites-title">
         <div class="favorites-content">
             <div class="favorites-header">
@@ -322,7 +299,6 @@
         </div>
     </dialog>
 
-    <!-- Product Detail Modal - CORREGIDO -->
     <dialog class="product-modal" id="product-modal" aria-labelledby="product-modal-title">
         <div class="product-modal-content">
             <div class="product-modal-header">
@@ -333,7 +309,6 @@
         </div>
     </dialog>
 
-    <!-- JavaScript Modules - RUTA CORREGIDA -->
     <script type="module" src="scripts/main.js"></script>
 </body>
 

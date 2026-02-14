@@ -5,16 +5,16 @@ let allProducts = [];
 
 export async function loadProducts() {
     console.log('🔄 Cargando productos...');
-    
+
     try {
         // Cargar productos
         allProducts = await fetchProducts();
         console.log(`✅ ${allProducts.length} productos cargados`);
-        
+
         // Determinar qué contenedor usar
         const isHomePage = document.getElementById('featured-products') !== null;
         const isProductsPage = document.getElementById('all-products') !== null;
-        
+
         // Home page - productos destacados
         if (isHomePage) {
             const container = document.getElementById('featured-products');
@@ -23,7 +23,7 @@ export async function loadProducts() {
                 renderProducts(featured, container);
             }
         }
-        
+
         // Products page - todos los productos
         if (isProductsPage) {
             const container = document.getElementById('all-products');
@@ -31,24 +31,24 @@ export async function loadProducts() {
                 // Obtener filtro de URL
                 const urlParams = new URLSearchParams(window.location.search);
                 const category = urlParams.get('category') || 'all';
-                
+
                 let productsToShow = allProducts;
                 if (category !== 'all') {
                     productsToShow = allProducts.filter(p => p.category === category);
                 }
-                
+
                 renderProducts(productsToShow, container);
             }
         }
-        
+
         // OCULTAR LOADING - IMPORTANTE
         const loaders = document.querySelectorAll('#loading-products, #loading-indicator, .loading');
         loaders.forEach(loader => {
             if (loader) loader.style.display = 'none';
         });
-        
+
         return allProducts;
-        
+
     } catch (error) {
         console.error('❌ Error:', error);
         return [];
@@ -58,12 +58,12 @@ export async function loadProducts() {
 // Función para renderizar productos
 function renderProducts(products, container) {
     if (!container) return;
-    
+
     if (products.length === 0) {
         container.innerHTML = '<p class="no-products">No products found</p>';
         return;
     }
-    
+
     container.innerHTML = products.map(product => `
         <div class="product-card" data-id="${product.id}">
             <div class="product-image-container">

@@ -1,15 +1,9 @@
-/* ===== PRODUCTS.CSS - VERSIÓN FINAL CORREGIDA ===== */
-/* Estilos específicos para la página de productos - Mobile First */
-/* ✅ SIN SELECTORES DUPLICADOS - ✅ SIN BOOTSTRAP */
-
-/* ===== PRODUCTS PAGE LAYOUT ===== */
 .products-page {
     padding-top: 1rem;
     padding-bottom: 3rem;
     min-height: 70vh;
 }
 
-/* ===== PRODUCTS HEADER ===== */
 .products-header {
     background: linear-gradient(135deg, var(--soft-accent) 0%, var(--background-light) 100%);
     padding: 2rem 0;
@@ -43,7 +37,6 @@
     backdrop-filter: blur(10px);
 }
 
-/* Search Info */
 .search-info {
     margin-top: 1rem;
     padding: 1rem;
@@ -63,7 +56,6 @@
     font-weight: 600;
 }
 
-/* ===== FILTER CONTROLS ===== */
 .products-controls {
     background-color: rgba(255, 255, 255, 0.95);
     padding: 1.5rem 0;
@@ -88,7 +80,6 @@
     justify-content: center;
 }
 
-/* ===== FILTER BUTTONS - UNIFICADO ===== */
 .filter-btn {
     padding: 0.5rem 1.25rem;
     border: 2px solid var(--soft-accent);
@@ -122,7 +113,6 @@
     border-color: var(--secondary-color);
 }
 
-/* ===== SORT CONTROLS ===== */
 .sort-controls {
     display: flex;
     align-items: center;
@@ -166,7 +156,6 @@
     box-shadow: 0 0 0 3px rgba(180, 122, 226, 0.1);
 }
 
-/* ===== ALL PRODUCTS SECTION ===== */
 .all-products {
     padding: 2rem 0;
 }
@@ -230,7 +219,6 @@
     min-width: 200px;
 }
 
-/* ===== PRODUCT GRID ===== */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -238,7 +226,6 @@
     padding: 1rem 0;
 }
 
-/* ===== PRODUCT CARD ===== */
 .product-card {
     background: var(--white);
     border-radius: var(--border-radius-lg);
@@ -305,7 +292,6 @@
     flex-grow: 1;
 }
 
-/* Product Category Badge */
 .product-category {
     display: inline-block;
     padding: 0.25rem 0.75rem;
@@ -344,7 +330,6 @@
     color: #F44336;
 }
 
-/* ===== PRODUCT ACTIONS ===== */
 .product-actions {
     display: flex;
     gap: 0.5rem;
@@ -360,7 +345,6 @@
     border-radius: var(--border-radius-md);
 }
 
-/* Favorite Button */
 .fav-btn {
     width: 36px;
     height: 36px;
@@ -390,7 +374,6 @@
     background-color: #d32f2f;
 }
 
-/* ===== PRODUCT DETAILS ===== */
 .product-details {
     display: none;
 }
@@ -427,7 +410,6 @@
     border-bottom: none;
 }
 
-/* ===== PRODUCTS COUNT ===== */
 #products-count {
     text-align: center;
     margin-top: 1.5rem;
@@ -444,7 +426,6 @@
     font-weight: 600;
 }
 
-/* ===== SIZE GUIDE ===== */
 .size-guide {
     padding: 2rem 0;
     background-color: var(--soft-accent);
@@ -511,7 +492,6 @@
     background-color: var(--soft-accent);
 }
 
-/* ===== PAGINATION ===== */
 .pagination {
     display: flex;
     justify-content: center;
@@ -553,121 +533,116 @@
     cursor: not-allowed;
 }
 
-/* ===== ANIMATIONS ===== */
 @keyframes productCardAppear {
     from {
         opacity: 0;
         transform: translateY(20px) scale(0.95);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
 }
 
-/* ===== RESPONSIVE BREAKPOINTS ===== */
-
-/* Tablet (768px and up) */
 @media (min-width: 768px) {
     .products-page {
         padding-top: 2rem;
     }
-    
+
     .products-header {
         padding: 3rem 0;
         margin-bottom: 3rem;
     }
-    
+
     .products-controls {
         top: 70px;
         padding: 1.75rem 0;
     }
-    
+
     .products-controls .dama-container {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         gap: 2rem;
     }
-    
+
     .filter-controls {
         justify-content: flex-start;
     }
-    
+
     .sort-controls {
         justify-content: flex-end;
     }
-    
+
     .all-products {
         padding: 3rem 0;
     }
-    
+
     .size-guide {
         padding: 3rem 0;
     }
-    
+
     .products-grid {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 2rem;
     }
-    
+
     .product-actions .dama-btn {
         font-size: 0.9rem;
         padding: 0.75rem;
     }
-    
+
     .product-image-container {
         height: 280px;
     }
 }
 
-/* Desktop (1024px and up) */
 @media (min-width: 1024px) {
     .products-header h1 {
         font-size: 2.75rem;
     }
-    
+
     .filter-btn {
         padding: 0.6rem 1.5rem;
         font-size: 1rem;
     }
-    
+
     #sort-select {
         padding: 0.6rem 2.5rem 0.6rem 1rem;
         font-size: 1rem;
     }
-    
+
     .products-grid {
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     }
-    
+
     .product-image-container {
         height: 280px;
     }
 }
 
-/* Large Desktop (1200px and up) */
 @media (min-width: 1200px) {
     .products-header h1 {
         font-size: 3rem;
     }
-    
+
     .products-controls {
         top: 80px;
     }
-    
+
     .products-grid {
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: 2.5rem;
     }
-    
+
     .product-image-container {
         height: 300px;
     }
 }
 
-/* ===== TOUCH DEVICE OPTIMIZATIONS ===== */
 @media (hover: none) and (pointer: coarse) {
+
     .filter-btn,
     .page-btn,
     .product-actions .dama-btn,
@@ -675,44 +650,43 @@
         min-height: 44px;
         min-width: 44px;
     }
-    
+
     .icon-btn {
         width: 44px;
         height: 44px;
     }
-    
+
     .product-card:hover {
         transform: none;
     }
-    
+
     .filter-btn.active {
         transform: scale(1.05);
     }
 }
 
-/* ===== DARK MODE SUPPORT ===== */
 @media (prefers-color-scheme: dark) {
     .products-header {
         background: linear-gradient(135deg, var(--dark-contrast) 0%, #2A2640 100%);
     }
-    
+
     .size-guide {
         background-color: var(--dark-contrast);
     }
-    
+
     .size-guide .section-title {
         color: var(--soft-accent);
     }
-    
+
     .size-table table {
         background-color: #2A2640;
     }
-    
+
     .size-table td {
         color: var(--soft-accent);
         border-bottom-color: var(--secondary-color);
     }
-    
+
     .size-table tbody tr:nth-child(even) {
         background-color: rgba(180, 122, 226, 0.1);
     }

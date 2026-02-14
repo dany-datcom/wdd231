@@ -1,9 +1,3 @@
-/* ===== CONTACT.CSS - VERSIÓN FINAL CORREGIDA ===== */
-/* Estilos específicos para la página de contacto - Mobile First */
-/* ✅ HEREDA TODAS LAS CLASES BASE DE MAIN.CSS */
-/* ✅ SIN DUPLICADOS - ✅ SIN BOOTSTRAP */
-
-/* ===== CONTACT PAGE LAYOUT ===== */
 .contact-page {
     padding: 2rem 0 3rem;
     min-height: 70vh;
@@ -19,7 +13,7 @@
     font-weight: 700;
 }
 
-/* ===== CONTACT GRID ===== */
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -27,7 +21,7 @@
     margin-bottom: 3rem;
 }
 
-/* ===== CONTACT INFORMATION ===== */
+
 .contact-info h2 {
     color: var(--dark-contrast);
     margin-bottom: 1.5rem;
@@ -53,7 +47,7 @@
 }
 
 .info-card h3 {
-    color:black;
+    color: black;
     margin-bottom: 0.75rem;
     font-size: 1.1rem;
     display: flex;
@@ -82,13 +76,24 @@
     text-decoration: underline;
 }
 
-/* Contact icons */
-.info-card:nth-child(1) h3::before { content: "📍 "; }
-.info-card:nth-child(2) h3::before { content: "📞 "; }
-.info-card:nth-child(3) h3::before { content: "✉️ "; }
-.info-card:nth-child(4) h3::before { content: "🕒 "; }
 
-/* ===== CONTACT FORM ===== */
+.info-card:nth-child(1) h3::before {
+    content: "📍 ";
+}
+
+.info-card:nth-child(2) h3::before {
+    content: "📞 ";
+}
+
+.info-card:nth-child(3) h3::before {
+    content: "✉️ ";
+}
+
+.info-card:nth-child(4) h3::before {
+    content: "🕒 ";
+}
+
+
 .contact-form-section h2 {
     color: var(--dark-contrast);
     margin-bottom: 1.5rem;
@@ -106,15 +111,13 @@
     border: 1px solid var(--soft-accent);
 }
 
-/* ===== FORM GROUPS - HEREDA DE MAIN.CSS ===== */
-/* Las clases .dama-form-group ya están definidas en main.css */
 
 .required {
     color: black;
     margin-left: 2px;
 }
 
-/* ===== CUSTOM SELECT ===== */
+
 .dama-form-group select {
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237A6AA3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -125,7 +128,7 @@
     cursor: pointer;
 }
 
-/* ===== CHARACTER COUNTER ===== */
+
 .char-counter {
     text-align: right;
     font-size: 0.8rem;
@@ -143,7 +146,7 @@
     font-weight: 500;
 }
 
-/* ===== CHECKBOX GROUP ===== */
+
 .checkbox-group {
     display: flex;
     align-items: flex-start;
@@ -167,5 +170,3 @@
     cursor: pointer;
     user-select: none;
 }
-
-/* ===== FORM LOADING STATE
